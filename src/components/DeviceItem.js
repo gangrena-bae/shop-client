@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Card, Col, Button } from "react-bootstrap";
+import { Card, Col, Button, Stack } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { DEVICE_ROUTE } from "../utils/consts";
 import { observer } from "mobx-react-lite";
@@ -22,7 +22,7 @@ const DeviceItem = observer(({ device }) => {
         />
         <Card.Body>
           <Card.Title>{device.name}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
+
           <Card.Subtitle className="mb-2 text-muted">
             {new Intl.NumberFormat("ru-RU", {
               style: "currency",
@@ -30,13 +30,23 @@ const DeviceItem = observer(({ device }) => {
               currencyDisplay: "narrowSymbol",
             }).format(device.price)}
           </Card.Subtitle>
-          <Button
-            variant="primary"
-            onClick={() => navigate(DEVICE_ROUTE + "/" + device.id)}
-          >
-            Купить
-          </Button>
-          <Button onClick={() => cart.addItem(device)}>+</Button>
+          <Card.Subtitle className="mb-2 text-muted">
+            <Stack direction="horizontal" gap={3}>
+              <Button
+                variant="outline-dark"
+                onClick={() => navigate(DEVICE_ROUTE + "/" + device.id)}
+              >
+                Открыть
+              </Button>
+              <Button
+                className="ms-auto"
+                variant="outline-dark"
+                onClick={() => cart.addItem(device)}
+              >
+                +
+              </Button>
+            </Stack>
+          </Card.Subtitle>
         </Card.Body>
       </Card>
     </Col>

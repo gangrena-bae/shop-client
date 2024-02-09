@@ -1,0 +1,74 @@
+.navbarCustom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  overflow-y: auto;
+  color: #fedd00;
+  padding-left: 10px;
+}
+.navbarCustom h2 {
+  padding-left: 10px;
+}
+.navbarListItem {
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border: solid;
+  border-color: transparent;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+  margin-right: 5px;
+  padding: 5px;
+}
+.navbarListItem img {
+  width: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.navbarCustom ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbarListItem:hover {
+  border-color: #fedd00;
+  color: #fff;
+}
+
+.navbarCustom a {
+  text-decoration: none;
+  color: #5f5c5f;
+  margin: 3px;
+  font-size: 15px;
+}
+
+.navbarCustomLogo {
+  width: 100%;
+}
+.navbarCustomLogo img {
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+}
+
+.content {
+  margin-left: 260px;
+}
+
+@media (max-width: 950px) {
+  .navbarCustom {
+    display: none;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}

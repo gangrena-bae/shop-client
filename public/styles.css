@@ -1,0 +1,579 @@
+/* Общие стили для всей страницы */
+
+html {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS */
+/* .btn {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, 0.1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn:hover {
+  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+  fill: none;
+  background-color: white;
+  color: black;
+} */
+/* .btn {
+  display: flex;
+  background-color: #5f5c5f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn:hover {
+  background-color: #fedd00;
+  color: gray;
+} */
+
+/* Стили левого навбара */
+.navbarCustom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  overflow-y: auto;
+  color: #fedd00;
+  padding-left: 10px;
+}
+.navbarCustom h2 {
+  padding-left: 10px;
+}
+.navbarListItem {
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border: solid;
+  border-color: transparent;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+  margin-right: 5px;
+  padding: 5px;
+}
+.navbarListItem img {
+  width: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.navbarCustom ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbarListItem:hover {
+  border-color: #fedd00;
+  color: #fff;
+}
+
+.navbarCustom a {
+  text-decoration: none;
+  color: #5f5c5f;
+  margin: 3px;
+  font-size: small;
+}
+
+.navbarCustomLogo {
+  width: 100%;
+}
+.navbarCustomLogo img {
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+}
+
+.content {
+  margin-left: 260px;
+}
+
+@media (max-width: 950px) {
+  .navbarCustom {
+    display: none;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
+
+/* Стили верхнего Навбара */
+.sticky-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  flex-wrap: wrap;
+  top: 0;
+  background-color: white;
+  border-bottom: solid;
+  border-width: 0.01px;
+  border-color: gray;
+  z-index: 999;
+}
+
+.stickyLeft {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.stickyRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sticky-navbar li {
+  margin: 15px;
+}
+
+.sticky-navbar a {
+  text-decoration: none;
+  color: #333;
+}
+
+.sticky-navbar a:hover {
+  color: #fedd00;
+}
+.phone {
+  font-size: 16px;
+}
+.phone a {
+  color: #000;
+  font-size: 16px;
+  margin: 0px;
+}
+
+/* Стили основной мозайки */
+.parent {
+  text-align: center;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  color: white;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50%;
+  height: 50%;
+  color: #5f5c5f;
+  margin-left: 5%;
+  padding: 0;
+}
+.child {
+  height: 100%;
+  width: 25%;
+  overflow: hidden;
+}
+.sideChild {
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: filter 0.2s ease;
+  overflow: hidden;
+}
+
+.bigChild {
+  display: flex;
+  background-image: url(/img/666.png);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 50%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transition: filter 1s ease;
+  overflow: hidden;
+}
+
+.bigChild h2 {
+  font-size: clamp(50px, 8vw, 80px);
+  margin-bottom: 0;
+}
+
+.bigChild p {
+  font-size: clamp(10px, 8vw, 20px);
+  text-align: start;
+  text-transform: uppercase;
+}
+
+/* .sideChild:hover {
+  filter: brightness(70%); /* Затемнение при наведении 
+} */
+
+@media (max-width: 1300px) {
+  .parent {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+  }
+  .child {
+    display: flex;
+    width: 100%;
+    height: 33%;
+    flex-direction: row;
+  }
+  .bigChild {
+    width: 100%;
+    height: 50%;
+    order: -100;
+  }
+  .sideChild {
+    height: 100%;
+  }
+}
+
+/* Cтили наведения на боковую мозайку */
+/* Общие стили */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.effect-text-four {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.hover-text-one {
+  overflow: hidden;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  text-align: center;
+}
+.hover-text-one figure {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+}
+.hover-text-one figure img {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hover-text-one figure figcaption {
+  padding: 2em;
+  color: black;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.hover-text-one figure figcaption::before,
+.hover-text-one figure figcaption::after {
+  pointer-events: none;
+}
+.hover-text-one figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.hover-text-one figure h3 {
+  word-spacing: -0.15em;
+  font-weight: 300;
+}
+.hover-text-one figure h3 span {
+  font-weight: 800;
+}
+.hover-text-one figure h3,
+.hover-text-one figure p {
+  margin: 0;
+}
+.hover-text-one figure p {
+  letter-spacing: 1px;
+  font-size: 68.5%;
+}
+
+/* Эффект при наведении */
+figure.effect-text-four figcaption {
+  text-align: left;
+}
+figure.effect-text-four h3,
+figure.effect-text-four p {
+  position: absolute;
+  right: 30px;
+  left: 30px;
+  padding: 10px 0;
+}
+figure.effect-text-four p {
+  bottom: 30px;
+  line-height: 1.5;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+figure.effect-text-four h3 {
+  top: 30px;
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  -webkit-transform: translate3d(0, 20px, 0);
+  transform: translate3d(0, 20px, 0);
+}
+figure.effect-text-four:hover h3 {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+figure.effect-text-four h3::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: black;
+  content: "";
+  -webkit-transform: translate3d(0, 40px, 0);
+  transform: translate3d(0, 40px, 0);
+}
+figure.effect-text-four h3::after,
+figure.effect-text-four p {
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+}
+figure.effect-text-four:hover h3::after,
+figure.effect-text-four:hover p {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* Стили для HERO секции */
+#hero {
+  display: flex;
+  background: linear-gradient(70deg, #5f5c5f, #fedd00);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding: 100px;
+}
+
+#hero h2 {
+  font-size: 32px;
+  margin: 0;
+}
+
+#hero p {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+/* Стили для секции с основными преимуществами */
+.features {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  width: min-content;
+  height: max-content;
+}
+.featureName {
+  display: flex;
+  text-align: center;
+  font-weight: lighter;
+  margin-bottom: 0;
+}
+.featureDesc {
+  display: flex;
+  text-align: center;
+  font-weight: lighter;
+  color: gray;
+}
+.featureCard img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Стили для секции с контактной информацией и формой обратной связи */
+#contact {
+  height: 500px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.contactRight {
+  width: 50%;
+  height: 100%;
+}
+.contactRight iframe {
+  width: 100%;
+  height: 100%;
+}
+.contactLeft {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.contactLeft h2 {
+  color: #fedd00;
+  display: flex;
+  justify-content: center;
+}
+.contactLeft img {
+  height: 25px;
+}
+.contactLeft p {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Стили карусели */
+
+.carousel {
+  align-items: center;
+  background: #e3e3e3;
+  display: flex;
+  height: 200px;
+  justify-content: center;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 960px;
+}
+.slider::before,
+.slider::after {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+.slider .slide {
+  height: 100px;
+  width: 250px;
+}
+.slide img {
+  object-fit: contain;
+}
+
+/* Стили для подвала страницы */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}

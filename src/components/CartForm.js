@@ -17,6 +17,8 @@ const CartForm = observer(() => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [type, setType] = useState("");
+  const cartList = cart.items.map((item) => item.name);
+  const productList = cartList.join(", ");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,18 +27,23 @@ const CartForm = observer(() => {
       event.stopPropagation();
     } else {
       const formData = new FormData();
-      formData.append("First Name", firstName);
-      formData.append("Last Name", lastName);
-      formData.append("City", city);
-      formData.append("Phone", phone);
-      formData.append("E-mail", email);
-      formData.append("Type", type);
+      formData.append("firstName", firstName);
+      formData.append("lastName", lastName);
+      formData.append("city", city);
+      formData.append("phone", phone);
+      formData.append("email", email);
+      formData.append("type", type);
+      formData.append("totalCost", cart.totalCost);
+      formData.append("cartList", productList);
       console.log(Object.fromEntries(formData));
       createOrder(formData);
     }
     setValidated(true);
   };
-
+  // Сам себя переиграл и отказался от этой хуйни
+  // {
+  //   cart.items.map((item, index) => formData.append(`${index}`, item.name));
+  // }
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Row className="mb-2">

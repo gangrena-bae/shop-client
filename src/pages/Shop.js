@@ -27,7 +27,7 @@ const Shop = observer(() => {
       device.selectedType.id,
       device.selectedBrand.id,
       device.page,
-      4
+      8
     ).then((data) => {
       device.setDevices(data.rows);
       device.setTotalCount(data.count);
@@ -35,13 +35,13 @@ const Shop = observer(() => {
   }, [device.page, device.selectedType, device.selectedBrand]);
 
   return (
-    <Container >
+    <Container>
       <Row className="mt-3">
-        <Col md={3}>
+        <Col md={2}>
           <TypeBar />
-        </Col>
-        <Col md={9}>
           <BrandBar />
+        </Col>
+        <Col md={10}>
           <DeviceList />
           <Pages />
         </Col>

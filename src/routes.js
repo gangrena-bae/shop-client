@@ -3,12 +3,16 @@ import {
   ADMIN_ROUTE,
   DEVICE_ROUTE,
   LOGIN_ROUTE,
+  MAIN_ROUTE,
   REGISTRATION_ROUTE,
   SHOP_ROUTE,
+  SPECIAL_ROUTE,
 } from "./utils/consts";
 import Shop from "./pages/Shop";
 import Auth from "./pages/Auth";
 import DevicePage from "./pages/DevicePage";
+import MainPage from "./pages/MainPage";
+import SpecialOrder from "./pages/SpecialOrder";
 
 export const authRoutes = [
   {
@@ -34,5 +38,12 @@ export const publicRoutes = [
     path: DEVICE_ROUTE + "/:id",
     Component: DevicePage,
   },
-  
+  {
+    path: MAIN_ROUTE,
+    Component: MainPage,
+  },
+  {
+    path: SPECIAL_ROUTE,
+    Component: SpecialOrder,
+  },
 ];

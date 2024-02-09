@@ -1,0 +1,38 @@
+<svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with SVG Editor - http://github.com/mzalive/SVG Editor/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null" id="svg_14">
+   <g stroke="null" transform="matrix(0.12139710698881555,0,0,0.06781683510376357,-255.89916373544935,0) " id="svg_5">
+    <g stroke="null" id="svg_6">
+     <path stroke="null" id="svg_7" d="m4506.279458,2801.287862l-29.275,0c-14.316,0 -25.962,11.646 -25.962,25.962l0,9.894l-349.082,0l0,-9.894c0,-14.316 -11.647,-25.962 -25.963,-25.962l-29.794,0c-14.316,0 -25.962,11.646 -25.962,25.962l0,254.289c0,14.316 11.646,25.962 25.962,25.962l29.794,0c14.316,0 25.963,-11.646 25.963,-25.962l0,-9.894l349.082,0l0,9.894c0,14.316 11.646,25.962 25.962,25.962l29.275,0c14.316,0 25.962,-11.646 25.962,-25.962l0,-254.289c0,-14.316 -11.646,-25.962 -25.962,-25.962zm-424.717,280.25c0,3.068 -2.496,5.564 -5.565,5.564l-29.794,0c-3.068,0 -5.564,-2.496 -5.564,-5.564l0,-254.288c0,-3.068 2.496,-5.564 5.564,-5.564l29.794,0c3.069,0 5.565,2.496 5.565,5.564l0,254.288zm369.48,-30.292l-349.082,0l0,-193.704l349.082,0l0,193.704zm60.801,30.292c0,3.068 -2.496,5.564 -5.564,5.564l-29.275,0c-3.068,0 -5.564,-2.496 -5.564,-5.564l0,-254.288c0,-3.068 2.496,-5.564 5.564,-5.564l29.275,0c3.068,0 5.564,2.496 5.564,5.564l0,254.288z"/>
+    </g>
+   </g>
+   <g stroke="null" transform="matrix(0.12139710698881555,0,0,0.06781683510376357,-255.89916373544935,0) " id="svg_8">
+    <g stroke="null" id="svg_9">
+     <path stroke="null" id="svg_10" d="m4297.547458,3017.986862l-5.196,0c-5.632,0 -10.199,4.567 -10.199,10.199c0,5.632 4.567,10.199 10.199,10.199l5.196,0c5.632,0 10.199,-4.567 10.199,-10.199c0,-5.632 -4.567,-10.199 -10.199,-10.199z"/>
+    </g>
+   </g>
+   <g stroke="null" transform="matrix(0.12139710698881555,0,0,0.06781683510376357,-255.89916373544935,0) " id="svg_11">
+    <g stroke="null" id="svg_12">
+     <path stroke="null" id="svg_13" d="m4252.856458,3017.986862l-123.68,0c-5.632,0 -10.199,4.567 -10.199,10.199c0,5.632 4.567,10.199 10.199,10.199l123.681,0c5.632,0 10.199,-4.567 10.199,-10.199c0,-5.632 -4.567,-10.199 -10.2,-10.199z"/>
+    </g>
+   </g>
+  </g>
+  <rect stroke="#000" id="svg_16" height="13.913041" width="42.608688" y="193.333304" x="241.739083" fill-opacity="null" stroke-opacity="null" stroke-width="0.1" fill="#fff"/>
+  <rect stroke="#000" id="svg_19" height="4.05797" width="7.53623" y="198.260835" x="224.927492" fill-opacity="null" stroke-opacity="null" fill="#fff"/>
+  <rect stroke="#000" id="svg_20" height="4.05797" width="7.53623" y="198.260835" x="293.623135" fill-opacity="null" stroke-opacity="null" fill="#fff"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_23" y2="195.14284" x2="282.571394" y1="194.857126" x1="243.714255" fill-opacity="null" stroke-opacity="null" stroke-width="NaN" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_24" y2="202.285696" x2="282.571394" y1="201.999982" x1="243.714255" fill-opacity="null" stroke-opacity="null" stroke-width="NaN" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_25" y2="205.428553" x2="282.571394" y1="205.142838" x1="243.714255" fill-opacity="null" stroke-opacity="null" stroke-width="NaN" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_26" y2="198.857125" x2="282.571394" y1="198.571411" x1="243.714255" fill-opacity="null" stroke-opacity="null" stroke-width="NaN" stroke="#000" fill="none"/>
+ </g>
+</svg>

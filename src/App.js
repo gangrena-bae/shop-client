@@ -6,6 +6,7 @@ import { Context } from "./index";
 import { observer } from "mobx-react-lite";
 import { check } from "./http/userApi";
 import { Spinner } from "react-bootstrap";
+import SideBar from "./components/SideBar";
 
 const App = observer(() => {
   const { user } = useContext(Context);
@@ -27,6 +28,7 @@ const App = observer(() => {
   return (
     <BrowserRouter>
       <NavBar />
+      <SideBar />
       <AppRouter />
     </BrowserRouter>
   );

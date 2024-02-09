@@ -1,0 +1,53 @@
+.sticky-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  flex-wrap: wrap;
+  top: 0;
+  background-color: white;
+  border-bottom: solid;
+  border-width: 0.01px;
+  border-color: gray;
+  z-index: 999;
+}
+
+.stickyLeft {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.stickyRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sticky-navbar li {
+  margin: 15px;
+}
+
+.sticky-navbar a {
+  text-decoration: none;
+  color: #333;
+}
+
+.sticky-navbar a:hover {
+  color: #fedd00;
+}
+.phone {
+  font-size: 16px;
+}
+.phone a {
+  color: #000;
+  font-size: 16px;
+  margin: 0px;
+}

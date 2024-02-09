@@ -4,11 +4,18 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
-import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from "../utils/consts";
+import {
+  ADMIN_ROUTE,
+  LOGIN_ROUTE,
+  MAIN_ROUTE,
+  SHOP_ROUTE,
+  SPECIAL_ROUTE,
+} from "../utils/consts";
 import Button from "react-bootstrap/Button";
 import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
 import CartModal from "./modals/CartModal";
+import "../components/NavBarStyles.css";
 
 const NavBar = observer(() => {
   const { user } = useContext(Context);
@@ -20,41 +27,72 @@ const NavBar = observer(() => {
   };
 
   return (
-    <div>
-      <Navbar bg="primary">
-        <Container>
-          <NavLink style={{ color: "white" }} to={SHOP_ROUTE}>
-            Roll-tex market
-          </NavLink>
-          <CartModal />
-          {user.isAuth ? (
-            <Nav className="ml-auto" style={{ color: "white" }}>
-              <Button
-                variant={"outline-light"}
-                onClick={() => navigate(ADMIN_ROUTE)}
-              >
-                Админ панель
-              </Button>
-              <Button
-                variant={"outline-light"}
-                onClick={() => logOut()}
-                className="ms-2"
-              >
-                Выйти
-              </Button>
-            </Nav>
-          ) : (
-            <Nav className="ml-auto" style={{ color: "white" }}>
-              <Button
-                variant={"outline-light"}
-                onClick={() => navigate(LOGIN_ROUTE)}
-              >
-                Авторизация
-              </Button>
-            </Nav>
-          )}
-        </Container>
-      </Navbar>
+    // <div>
+    //   <Navbar bg="primary">
+    //     <Container>
+    //       <NavLink style={{ color: "white" }} to={SHOP_ROUTE}>
+    //         Roll-tex market
+    //       </NavLink>
+    //       <CartModal />
+    //       {user.isAuth ? (
+    //         <Nav className="ml-auto" style={{ color: "white" }}>
+    //           <Button
+    //             variant={"outline-light"}
+    //             onClick={() => navigate(ADMIN_ROUTE)}
+    //           >
+    //             Админ панель
+    //           </Button>
+    //           <Button
+    //             variant={"outline-light"}
+    //             onClick={() => logOut()}
+    //             className="ms-2"
+    //           >
+    //             Выйти
+    //           </Button>
+    //         </Nav>
+    //       ) : (
+    //         <Nav className="ml-auto" style={{ color: "white" }}>
+    //           <Button
+    //             variant={"outline-light"}
+    //             onClick={() => navigate(LOGIN_ROUTE)}
+    //           >
+    //             Авторизация
+    //           </Button>
+    //         </Nav>
+    //       )}
+    //     </Container>
+    //   </Navbar>
+    // </div>
+    <div className="content">
+      <nav className="sticky-navbar">
+        <ul className="stickyLeft">
+          <li>
+            <NavLink to={MAIN_ROUTE}>Главная</NavLink>
+          </li>
+          <li>
+            <NavLink to={SHOP_ROUTE}>Каталог</NavLink>
+          </li>
+          <li>
+            <NavLink>Категории</NavLink>
+          </li>
+          <li>
+            <NavLink>Контакты</NavLink>
+          </li>
+          <li>
+            <NavLink to={SPECIAL_ROUTE}>Особый заказ</NavLink>
+          </li>
+        </ul>
+        <ul className="stickyRight">
+          <li>
+            <CartModal />
+          </li>
+          <li>
+            <div className="phone">
+              <a href="tel:+79673506321">+7 (967) 350-63-21</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 });
