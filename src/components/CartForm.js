@@ -48,7 +48,7 @@ const CartForm = observer(() => {
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Row className="mb-2">
         <Form.Group as={Col} controlId="validationCustom01">
-          <Form.Label>Имя</Form.Label>
+          <Form.Label>Имя</Form.Label> 
           <Form.Control
             required
             value={firstName}
