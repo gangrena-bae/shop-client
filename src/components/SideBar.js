@@ -1,6 +1,6 @@
 import React from "react";
 import "../components/SideBarStyles.css";
-import Logo from "./icons/color_transparent.svg";
+import Logo from "./icons/logo.svg";
 import Pc from "./icons/pc-svgrepo-com.svg";
 import Tv from "./icons/screen-tv-svgrepo-com.svg";
 import Mb from "./icons/motherboard-svgrepo-com.svg";

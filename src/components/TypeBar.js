@@ -1,22 +1,28 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../index";
 import ListGroup from "react-bootstrap/ListGroup";
 import { observer } from "mobx-react-lite";
+import { ButtonGroup, ListGroupItem, ToggleButton } from "react-bootstrap";
 
 const TypeBar = observer(() => {
   const { device } = useContext(Context);
+  const [radioValue, setRadioValue] = useState("");
+
   return (
     <div>
-      <ListGroup>
+      <ListGroup vertical>
         {device.types.map((type) => (
-          <ListGroup.Item
+          <ListGroupItem
             action
-            active={type.id === device.setSelectedType.id}
-            onClick={() => device.setSelectedType(type)}
             key={type.id}
+            active={type.id === radioValue}
+            onClick={() => {
+              device.setSelectedType(type);
+              setRadioValue(type.id);
+            }}
           >
             {type.name}
-          </ListGroup.Item>
+          </ListGroupItem>
         ))}
       </ListGroup>
     </div>

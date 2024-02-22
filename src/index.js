@@ -5,6 +5,7 @@ import UserStore from "./store/UserStore";
 import { createContext } from "react";
 import DeviceStore from "./store/DeviceStore";
 import CartStore from "./store/CartStore";
+import "./styles.css";
 
 export const Context = createContext(null);
 

@@ -33,14 +33,14 @@ const DeviceItem = observer(({ device }) => {
           <Card.Subtitle className="mb-2 text-muted">
             <Stack direction="horizontal" gap={3}>
               <Button
-                variant="outline-dark"
+                variant="outline-primary"
                 onClick={() => navigate(DEVICE_ROUTE + "/" + device.id)}
               >
                 Открыть
               </Button>
               <Button
                 className="ms-auto"
-                variant="outline-dark"
+                variant="outline-primary"
                 onClick={() => cart.addItem(device)}
               >
                 +

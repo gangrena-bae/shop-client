@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { Context } from "../index";
 import { createSpecial } from "../http/specialApi";
+import "./SpecialOrderStyles.css";
 
 const SpecialOrder = observer(() => {
   const { cart } = useContext(Context);
@@ -34,52 +35,54 @@ const SpecialOrder = observer(() => {
   //   cart.items.map((item, index) => formData.append(`${index}`, item.name));
   // }
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <Row className="mb-2">
-        <Form.Group as={Col} controlId="validationCustom01">
-          <Form.Label>Имя</Form.Label>
-          <Form.Control
+    <div className="main-form">
+      <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <Row className="mb-2">
+          <Form.Group as={Col} controlId="validationCustom01">
+            <Form.Label>Имя</Form.Label>
+            <Form.Control
+              required
+              value={name}
+              type="text"
+              placeholder="Имя"
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group as={Col} controlId="validationCustom05">
+            <Form.Label>E-mail</Form.Label>
+            <Form.Control
+              value={email}
+              type="email"
+              placeholder="E-mail"
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
+        </Row>
+        <Row className="mb-2">
+          <Form.Group as={Col} controlId="validationCustom02">
+            <Form.Label>Обращение</Form.Label>
+            <Form.Control
+              rows={3}
+              required
+              value={text}
+              as="textarea"
+              placeholder="Опишите ваше обращение"
+              onChange={(e) => setText(e.target.value)}
+            />
+          </Form.Group>
+        </Row>
+        <Form.Group className="mb-2">
+          <Form.Check
             required
-            value={name}
-            type="text"
-            placeholder="Имя"
-            onChange={(e) => setFirstName(e.target.value)}
+            label="Подтверждение"
+            feedback="Необходимо подтверждение перед отправкой"
+            feedbackType="invalid"
           />
         </Form.Group>
-        <Form.Group as={Col} controlId="validationCustom05">
-          <Form.Label>E-mail</Form.Label>
-          <Form.Control
-            value={email}
-            type="email"
-            placeholder="E-mail"
-            required
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
-      </Row>
-      <Row className="mb-2">
-        <Form.Group as={Col} controlId="validationCustom02">
-          <Form.Label>Обращение</Form.Label>
-          <Form.Control
-            rows={3}
-            required
-            value={text}
-            as="textarea"
-            placeholder="Опишите ваше обращение"
-            onChange={(e) => setText(e.target.value)}
-          />
-        </Form.Group>
-      </Row>
-      <Form.Group className="mb-2">
-        <Form.Check
-          required
-          label="Подтверждение"
-          feedback="Необходимо подтверждение перед отправкой"
-          feedbackType="invalid"
-        />
-      </Form.Group>
-      <Button type="submit">Сделать заказ</Button>
-    </Form>
+        <Button type="submit">Сделать заказ</Button>
+      </Form>
+    </div>
   );
 });
 

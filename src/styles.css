@@ -55,11 +55,11 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 .btn:hover {
-  background-color: #fedd00;
+  background-color: #0074CA;
   color: gray;
 } */
 
-/* Стили левого навбара */
+/* Стили левого навбара
 .navbarCustom {
   position: fixed;
   top: 0;
@@ -70,7 +70,7 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 999;
   overflow-y: auto;
-  color: #fedd00;
+  color: #0074ca;
   padding-left: 10px;
 }
 .navbarCustom h2 {
@@ -101,7 +101,7 @@ body {
   padding: 0;
 }
 .navbarListItem:hover {
-  border-color: #fedd00;
+  border-color: #0074ca;
   color: #fff;
 }
 
@@ -136,7 +136,7 @@ body {
 }
 
 /* Стили верхнего Навбара */
-.sticky-navbar {
+/* .sticky-navbar {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -179,7 +179,7 @@ body {
 }
 
 .sticky-navbar a:hover {
-  color: #fedd00;
+  color: #0074ca;
 }
 .phone {
   font-size: 16px;
@@ -188,7 +188,7 @@ body {
   color: #000;
   font-size: 16px;
   margin: 0px;
-}
+} */
 
 /* Стили основной мозайки */
 .parent {
@@ -208,7 +208,7 @@ body {
   align-items: flex-start;
   width: 50%;
   height: 50%;
-  color: #5f5c5f;
+  color: black;
   margin-left: 5%;
   padding: 0;
 }
@@ -220,6 +220,7 @@ body {
 .sideChild {
   display: flex;
   background-size: cover;
+  background: linear-gradient(70deg, #5f5c5f, #0074ca);
   background-position: center;
   height: 50%;
   width: 100%;
@@ -232,8 +233,8 @@ body {
 
 .bigChild {
   display: flex;
-  background-image: url(/img/666.png);
   background-size: cover;
+  background: linear-gradient(to bottom, #5f5c5f, #0074ca);
   background-position: center;
   height: 100%;
   width: 50%;
@@ -242,6 +243,9 @@ body {
   transition: filter 1s ease;
   overflow: hidden;
 }
+.logoImg {
+  width: 100%;
+}
 
 .bigChild h2 {
   font-size: clamp(50px, 8vw, 80px);
@@ -249,9 +253,8 @@ body {
 }
 
 .bigChild p {
-  font-size: clamp(10px, 8vw, 20px);
+  padding-top: 10%;
   text-align: start;
-  text-transform: uppercase;
 }
 
 /* .sideChild:hover {
@@ -413,7 +416,7 @@ figure.effect-text-four:hover p {
 /* Стили для HERO секции */
 #hero {
   display: flex;
-  background: linear-gradient(70deg, #5f5c5f, #fedd00);
+  background: linear-gradient(70deg, #5f5c5f, #0074ca);
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -496,7 +499,7 @@ figure.effect-text-four:hover p {
 }
 
 .contactLeft h2 {
-  color: #fedd00;
+  color: #0074ca;
   display: flex;
   justify-content: center;
 }

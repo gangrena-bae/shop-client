@@ -10,6 +10,7 @@ import { Context } from "../index";
 import { fetchBrands, fetchDevices, fetchTypes } from "../http/deviceAPI";
 import Pages from "../components/Pages";
 
+
 const Shop = observer(() => {
   const { device } = useContext(Context);
 
