@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "../components/Carousel";
-import { Container } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 import Logo from "../components/icons/logoPNG.png";
 import Supp from "../components/icons/support-svgrepo-com.svg";
 import Storage from "../components/icons/storage-svgrepo-com.svg";
@@ -19,7 +19,7 @@ const MainPage = () => {
           <div className="sideChild">
             <div className="hover-text-one">
               <figure className="effect-text-four">
-                <img src={Val}></img>
+                <Image src={Val}></Image>
                 <figcaption>
                   <h3>Винтовые передачи</h3>
                   <p>Только надежное железо</p>
@@ -31,7 +31,7 @@ const MainPage = () => {
           <div className="sideChild">
             <div className="hover-text-one">
               <figure className="effect-text-four">
-                <img src={Panel}></img>
+                <Image src={Panel}></Image>
                 <figcaption>
                   <h3>Редукторы</h3>
                   <p>Простое решение непростой задачи</p>
@@ -42,7 +42,7 @@ const MainPage = () => {
         </div>
         <div className="bigChild">
           <div className="info">
-            <img src={Logo} className="logoImg"></img>
+            <Image src={Logo} className="logoImg"></Image>
             <p>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium.
@@ -65,7 +65,7 @@ const MainPage = () => {
           <div className="sideChild">
             <div className="hover-text-one">
               <figure className="effect-text-four">
-                <img src={Motor}></img>
+                <Image src={Motor}></Image>
                 <figcaption>
                   <h3>Сервоприводы</h3>
                   <p>Для тех, кто ценит время и деньги</p>
