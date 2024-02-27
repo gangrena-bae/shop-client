@@ -7,12 +7,14 @@ import {
   REGISTRATION_ROUTE,
   SHOP_ROUTE,
   SPECIAL_ROUTE,
+  CATEGORIES_ROUTE,
 } from "./utils/consts";
 import Shop from "./pages/Shop";
 import Auth from "./pages/Auth";
 import DevicePage from "./pages/DevicePage";
 import MainPage from "./pages/MainPage";
 import SpecialOrder from "./pages/SpecialOrder";
+import Categories from "./pages/Categories";
 
 export const authRoutes = [
   {
@@ -45,5 +47,9 @@ export const publicRoutes = [
   {
     path: SPECIAL_ROUTE,
     Component: SpecialOrder,
+  },
+  {
+    path: CATEGORIES_ROUTE,
+    Component: Categories,
   },
 ];

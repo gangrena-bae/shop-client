@@ -2,8 +2,12 @@ import { makeAutoObservable } from "mobx";
 
 export default class CartStore {
   constructor() {
-    this._items = [];
+    this._items = JSON.parse(localStorage.getItem("cartItems")) || [];
     makeAutoObservable(this);
+
+    window.addEventListener("beforeunload", () => {
+      localStorage.setItem("cartItems", JSON.stringify(this._items));
+    });
   }
 
   addItem(item) {

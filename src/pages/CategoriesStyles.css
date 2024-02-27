@@ -1,0 +1,128 @@
+/* Стили мозайки категорий */
+/* .parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+} */
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(70deg, #0074CA, #5f5c5f);
+  cursor: pointer;
+  margin: 10px;
+}
+.categoryCard img {
+  width: 50%;
+}
+
+.categoryCard a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+/* Стили финтифлюшек */
+.container-cat {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+
+  flex-wrap: wrap;
+}
+
+.container-cat .card-cat {
+  position: relative;
+  cursor: pointer;
+}
+
+.container-cat .card-cat .face {
+  width: 300px;
+  height: 200px;
+  transition: 0.5s;
+}
+
+.container-cat .card-cat .face.face1 {
+  position: relative;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+
+.container-cat .card-cat:hover .face.face1 {
+  background: linear-gradient(70deg, #0074CA, #5f5c5f);
+  transform: translateY(0);
+}
+
+.container-cat .card-cat .face.face1 .content-cat {
+  opacity: 0.2;
+  transition: 0.5s;
+}
+
+.container-cat .card-cat:hover .face.face1 .content-cat {
+  opacity: 1;
+}
+
+.container-cat .card-cat .face.face1 .content-cat img {
+  max-width: 100px;
+}
+
+.content-cat {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-cat .card-cat .face.face1 .content-cat h3 {
+  margin: 10px 0 0;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.container-cat .card-cat .face.face2 {
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  transform: translateY(-100px);
+}
+
+.container-cat .card-cat:hover .face.face2 {
+  transform: translateY(0);
+}
+
+.container-cat .card-cat .face.face2 .content-cat p {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+}
+
+.container-cat .card-cat .face.face2 .content-cat a {
+  margin: 15px 0 0;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #333;
+  padding: 5px;
+  border: 1px solid #333;
+}
+
+.container-cat .card-cat .face.face2 .content-cat a:hover {
+  background: #333;
+  color: #fff;
+}

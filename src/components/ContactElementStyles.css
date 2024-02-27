@@ -1,0 +1,715 @@
+.wrapper {
+  --primary-color: #00234d;
+  --secondary-color: #f76b6a;
+  --btn-primary-border-radius: 0.25rem;
+  --btn-primary-color: #fff;
+  --btn-primary-background-color: #00234d;
+  --btn-primary-border-color: #00234d;
+  --btn-primary-hover-color: #fff;
+  --btn-primary-background-hover-color: #00234d;
+  --btn-primary-border-hover-color: #00234d;
+  --btn-primary-font-weight: 500;
+  --btn-secondary-border-radius: 0.25rem;
+  --btn-secondary-color: #00234d;
+  --btn-secondary-background-color: transparent;
+  --btn-secondary-border-color: #00234d;
+  --btn-secondary-hover-color: #fff;
+  --btn-secondary-background-hover-color: #00234d;
+  --btn-secondary-border-hover-color: #00234d;
+  --btn-secondary-font-weight: 500;
+  --heading-color: #000;
+  --heading-font-family: "Poppins", sans-serif;
+  --heading-font-weight: 700;
+  --title-color: #000;
+  --title-font-family: "Poppins", sans-serif;
+  --title-font-weight: 400;
+  --body-color: #000;
+  --body-background-color: #fff;
+  --body-font-family: "Poppins", sans-serif;
+  --body-font-size: 14px;
+  --body-font-weight: 400;
+  --section-heading-color: #000;
+  --section-heading-font-family: "Poppins", sans-serif;
+  --section-heading-font-size: 48px;
+  --section-heading-font-weight: 600;
+  --section-subheading-color: #000;
+  --section-subheading-font-family: "Poppins", sans-serif;
+  --section-subheading-font-size: 16px;
+  --section-subheading-font-weight: 400;
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  color: var(--body-color);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  font-family: var(--body-font-family);
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1320px;
+}
+
+.contact-justify {
+  --primary-color: #00234d;
+  --secondary-color: #f76b6a;
+  --btn-primary-border-radius: 0.25rem;
+  --btn-primary-color: #fff;
+  --btn-primary-background-color: #00234d;
+  --btn-primary-border-color: #00234d;
+  --btn-primary-hover-color: #fff;
+  --btn-primary-background-hover-color: #00234d;
+  --btn-primary-border-hover-color: #00234d;
+  --btn-primary-font-weight: 500;
+  --btn-secondary-border-radius: 0.25rem;
+  --btn-secondary-color: #00234d;
+  --btn-secondary-background-color: transparent;
+  --btn-secondary-border-color: #00234d;
+  --btn-secondary-hover-color: #fff;
+  --btn-secondary-background-hover-color: #00234d;
+  --btn-secondary-border-hover-color: #00234d;
+  --btn-secondary-font-weight: 500;
+  --heading-color: #000;
+  --heading-font-family: "Poppins", sans-serif;
+  --heading-font-weight: 700;
+  --title-color: #000;
+  --title-font-family: "Poppins", sans-serif;
+  --title-font-weight: 400;
+  --body-color: #000;
+  --body-background-color: #fff;
+  --body-font-family: "Poppins", sans-serif;
+  --body-font-size: 14px;
+  --body-font-weight: 400;
+  --section-heading-color: #000;
+  --section-heading-font-family: "Poppins", sans-serif;
+  --section-heading-font-size: 48px;
+  --section-heading-font-weight: 600;
+  --section-subheading-color: #000;
+  --section-subheading-font-family: "Poppins", sans-serif;
+  --section-subheading-font-size: 16px;
+  --section-subheading-font-weight: 400;
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  color: var(--body-color);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  font-family: var(--body-font-family);
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) * -0.5);
+  margin-left: calc(var(--bs-gutter-x) * -0.5);
+  justify-content: center !important;
+}
+
+.contact-grid {
+  --primary-color: #00234d;
+  --secondary-color: #f76b6a;
+  --btn-primary-border-radius: 0.25rem;
+  --btn-primary-color: #fff;
+  --btn-primary-background-color: #00234d;
+  --btn-primary-border-color: #00234d;
+  --btn-primary-hover-color: #fff;
+  --btn-primary-background-hover-color: #00234d;
+  --btn-primary-border-hover-color: #00234d;
+  --btn-primary-font-weight: 500;
+  --btn-secondary-border-radius: 0.25rem;
+  --btn-secondary-color: #00234d;
+  --btn-secondary-background-color: transparent;
+  --btn-secondary-border-color: #00234d;
+  --btn-secondary-hover-color: #fff;
+  --btn-secondary-background-hover-color: #00234d;
+  --btn-secondary-border-hover-color: #00234d;
+  --btn-secondary-font-weight: 500;
+  --heading-color: #000;
+  --heading-font-family: "Poppins", sans-serif;
+  --heading-font-weight: 700;
+  --title-color: #000;
+  --title-font-family: "Poppins", sans-serif;
+  --title-font-weight: 400;
+  --body-color: #000;
+  --body-background-color: #fff;
+  --body-font-family: "Poppins", sans-serif;
+  --body-font-size: 14px;
+  --body-font-weight: 400;
+  --section-heading-color: #000;
+  --section-heading-font-family: "Poppins", sans-serif;
+  --section-heading-font-size: 48px;
+  --section-heading-font-weight: 600;
+  --section-subheading-color: #000;
+  --section-subheading-font-family: "Poppins", sans-serif;
+  --section-subheading-font-size: 16px;
+  --section-subheading-font-weight: 400;
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  color: var(--body-color);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  font-family: var(--body-font-family);
+  letter-spacing: 0.5px;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
+  flex: 0 0 auto;
+  width: 33.33333333%;
+}
+
+.contact-item {
+  --primary-color: #00234d;
+  --secondary-color: #f76b6a;
+  --btn-primary-border-radius: 0.25rem;
+  --btn-primary-color: #fff;
+  --btn-primary-background-color: #00234d;
+  --btn-primary-border-color: #00234d;
+  --btn-primary-hover-color: #fff;
+  --btn-primary-background-hover-color: #00234d;
+  --btn-primary-border-hover-color: #00234d;
+  --btn-primary-font-weight: 500;
+  --btn-secondary-border-radius: 0.25rem;
+  --btn-secondary-color: #00234d;
+  --btn-secondary-background-color: transparent;
+  --btn-secondary-border-color: #00234d;
+  --btn-secondary-hover-color: #fff;
+  --btn-secondary-background-hover-color: #00234d;
+  --btn-secondary-border-hover-color: #00234d;
+  --btn-secondary-font-weight: 500;
+  --heading-color: #000;
+  --heading-font-family: "Poppins", sans-serif;
+  --heading-font-weight: 700;
+  --title-color: #000;
+  --title-font-family: "Poppins", sans-serif;
+  --title-font-weight: 400;
+  --body-color: #000;
+  --body-background-color: #fff;
+  --body-font-family: "Poppins", sans-serif;
+  --body-font-size: 14px;
+  --body-font-weight: 400;
+  --section-heading-color: #000;
+  --section-heading-font-family: "Poppins", sans-serif;
+  --section-heading-font-size: 48px;
+  --section-heading-font-weight: 600;
+  --section-subheading-color: #000;
+  --section-subheading-font-family: "Poppins", sans-serif;
+  --section-subheading-font-size: 16px;
+  --section-subheading-font-weight: 400;
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  color: var(--body-color);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  font-family: var(--body-font-family);
+  letter-spacing: 0.5px;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-top: 30px;
+  border: 1px solid #00234d;
+  border-radius: 4px;
+  transition: all 0.3s;
+  background-color: transparent;
+  padding: 16px;
+}
+.contact-icon {
+  --primary-color: #00234d;
+  --secondary-color: #f76b6a;
+  --btn-primary-border-radius: 0.25rem;
+  --btn-primary-color: #fff;
+  --btn-primary-background-color: #00234d;
+  --btn-primary-border-color: #00234d;
+  --btn-primary-hover-color: #fff;
+  --btn-primary-background-hover-color: #00234d;
+  --btn-primary-border-hover-color: #00234d;
+  --btn-primary-font-weight: 500;
+  --btn-secondary-border-radius: 0.25rem;
+  --btn-secondary-color: #00234d;
+  --btn-secondary-background-color: transparent;
+  --btn-secondary-border-color: #00234d;
+  --btn-secondary-hover-color: #fff;
+  --btn-secondary-background-hover-color: #00234d;
+  --btn-secondary-border-hover-color: #00234d;
+  --btn-secondary-font-weight: 500;
+  --heading-color: #000;
+  --heading-font-family: "Poppins", sans-serif;
+  --heading-font-weight: 700;
+  --title-color: #000;
+  --title-font-family: "Poppins", sans-serif;
+  --title-font-weight: 400;
+  --body-color: #000;
+  --body-background-color: #fff;
+  --body-font-family: "Poppins", sans-serif;
+  --body-font-size: 14px;
+  --body-font-weight: 400;
+  --section-heading-color: #000;
+  --section-heading-font-family: "Poppins", sans-serif;
+  --section-heading-font-size: 48px;
+  --section-heading-font-weight: 600;
+  --section-subheading-color: #000;
+  --section-subheading-font-family: "Poppins", sans-serif;
+  --section-subheading-font-size: 16px;
+  --section-subheading-font-weight: 400;
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  color: var(--body-color);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  font-family: var(--body-font-family);
+  letter-spacing: 0.5px;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  box-sizing: border-box;
+  min-width: 56px;
+  margin-right: 20px;
+}
+
+.contact-details {
+  --primary-color: #00234d;
+  --secondary-color: #f76b6a;
+  --btn-primary-border-radius: 0.25rem;
+  --btn-primary-color: #fff;
+  --btn-primary-background-color: #00234d;
+  --btn-primary-border-color: #00234d;
+  --btn-primary-hover-color: #fff;
+  --btn-primary-background-hover-color: #00234d;
+  --btn-primary-border-hover-color: #00234d;
+  --btn-primary-font-weight: 500;
+  --btn-secondary-border-radius: 0.25rem;
+  --btn-secondary-color: #00234d;
+  --btn-secondary-background-color: transparent;
+  --btn-secondary-border-color: #00234d;
+  --btn-secondary-hover-color: #fff;
+  --btn-secondary-background-hover-color: #00234d;
+  --btn-secondary-border-hover-color: #00234d;
+  --btn-secondary-font-weight: 500;
+  --heading-color: #000;
+  --heading-font-family: "Poppins", sans-serif;
+  --heading-font-weight: 700;
+  --title-color: #000;
+  --title-font-family: "Poppins", sans-serif;
+  --title-font-weight: 400;
+  --body-color: #000;
+  --body-background-color: #fff;
+  --body-font-family: "Poppins", sans-serif;
+  --body-font-size: 14px;
+  --body-font-weight: 400;
+  --section-heading-color: #000;
+  --section-heading-font-family: "Poppins", sans-serif;
+  --section-heading-font-size: 48px;
+  --section-heading-font-weight: 600;
+  --section-subheading-color: #000;
+  --section-subheading-font-family: "Poppins", sans-serif;
+  --section-subheading-font-size: 16px;
+  --section-subheading-font-weight: 400;
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  color: var(--body-color);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  font-family: var(--body-font-family);
+  letter-spacing: 0.5px;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  box-sizing: border-box;
+}
+
+.contact-title {
+  --primary-color: #00234d;
+  --secondary-color: #f76b6a;
+  --btn-primary-border-radius: 0.25rem;
+  --btn-primary-color: #fff;
+  --btn-primary-background-color: #00234d;
+  --btn-primary-border-color: #00234d;
+  --btn-primary-hover-color: #fff;
+  --btn-primary-background-hover-color: #00234d;
+  --btn-primary-border-hover-color: #00234d;
+  --btn-primary-font-weight: 500;
+  --btn-secondary-border-radius: 0.25rem;
+  --btn-secondary-color: #00234d;
+  --btn-secondary-background-color: transparent;
+  --btn-secondary-border-color: #00234d;
+  --btn-secondary-hover-color: #fff;
+  --btn-secondary-background-hover-color: #00234d;
+  --btn-secondary-border-hover-color: #00234d;
+  --btn-secondary-font-weight: 500;
+  --heading-color: #000;
+  --heading-font-family: "Poppins", sans-serif;
+  --heading-font-weight: 700;
+  --title-color: #000;
+  --title-font-family: "Poppins", sans-serif;
+  --title-font-weight: 400;
+  --body-color: #000;
+  --body-background-color: #fff;
+  --body-font-family: "Poppins", sans-serif;
+  --body-font-size: 14px;
+  --body-font-weight: 400;
+  --section-heading-color: #000;
+  --section-heading-font-family: "Poppins", sans-serif;
+  --section-heading-font-size: 48px;
+  --section-heading-font-weight: 600;
+  --section-subheading-color: #000;
+  --section-subheading-font-family: "Poppins", sans-serif;
+  --section-subheading-font-size: 16px;
+  --section-subheading-font-weight: 400;
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  letter-spacing: 0.5px;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #000;
+}
+
+.contact-info {
+  --primary-color: #00234d;
+  --secondary-color: #f76b6a;
+  --btn-primary-border-radius: 0.25rem;
+  --btn-primary-color: #fff;
+  --btn-primary-background-color: #00234d;
+  --btn-primary-border-color: #00234d;
+  --btn-primary-hover-color: #fff;
+  --btn-primary-background-hover-color: #00234d;
+  --btn-primary-border-hover-color: #00234d;
+  --btn-primary-font-weight: 500;
+  --btn-secondary-border-radius: 0.25rem;
+  --btn-secondary-color: #00234d;
+  --btn-secondary-background-color: transparent;
+  --btn-secondary-border-color: #00234d;
+  --btn-secondary-hover-color: #fff;
+  --btn-secondary-background-hover-color: #00234d;
+  --btn-secondary-border-hover-color: #00234d;
+  --btn-secondary-font-weight: 500;
+  --heading-color: #000;
+  --heading-font-family: "Poppins", sans-serif;
+  --heading-font-weight: 700;
+  --title-color: #000;
+  --title-font-family: "Poppins", sans-serif;
+  --title-font-weight: 400;
+  --body-color: #000;
+  --body-background-color: #fff;
+  --body-font-family: "Poppins", sans-serif;
+  --body-font-size: 14px;
+  --body-font-weight: 400;
+  --section-heading-color: #000;
+  --section-heading-font-family: "Poppins", sans-serif;
+  --section-heading-font-size: 48px;
+  --section-heading-font-weight: 600;
+  --section-subheading-color: #000;
+  --section-subheading-font-family: "Poppins", sans-serif;
+  --section-subheading-font-size: 16px;
+  --section-subheading-font-weight: 400;
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  font-family: var(--body-font-family);
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.69;
+  letter-spacing: 0.5px;
+  color: #000;
+  opacity: 0.8;
+  margin-bottom: 0;
+  margin-top: 0px;
+  display: block;
+}

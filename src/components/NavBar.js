@@ -10,6 +10,7 @@ import {
   MAIN_ROUTE,
   SHOP_ROUTE,
   SPECIAL_ROUTE,
+  CATEGORIES_ROUTE,
 } from "../utils/consts";
 import Button from "react-bootstrap/Button";
 import { observer } from "mobx-react-lite";
@@ -73,13 +74,10 @@ const NavBar = observer(() => {
             <NavLink to={SHOP_ROUTE}>Каталог</NavLink>
           </li>
           <li>
-            <NavLink>Категории</NavLink>
+            <NavLink to={CATEGORIES_ROUTE}>Категории</NavLink>
           </li>
           <li>
-            <NavLink>Контакты</NavLink>
-          </li>
-          <li>
-            <NavLink to={SPECIAL_ROUTE}>Особый заказ</NavLink>
+            <NavLink to={SPECIAL_ROUTE}>Связаться с нами</NavLink>
           </li>
         </ul>
         <ul className="stickyRight">

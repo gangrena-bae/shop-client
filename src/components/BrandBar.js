@@ -24,6 +24,16 @@ const BrandBar = observer(() => {
   const { device } = useContext(Context);
   const [activeBrandId, setActiveBrandId] = useState(null);
 
+  const handleBrandClick = (brand) => {
+    if (brand.id === activeBrandId) {
+      device.setSelectedBrand(null);
+      setActiveBrandId(null);
+    } else {
+      device.setSelectedBrand(brand);
+      setActiveBrandId(brand.id);
+    }
+  };
+
   return (
     <ListGroup className="mt-2">
       {device.brands.map((brand) => (
@@ -31,10 +41,7 @@ const BrandBar = observer(() => {
           action
           key={brand.id}
           active={brand.id === activeBrandId}
-          onClick={() => {
-            device.setSelectedBrand(brand);
-            setActiveBrandId(brand.id);
-          }}
+          onClick={() => handleBrandClick(brand)}
         >
           {brand.name}
         </ListGroup.Item>

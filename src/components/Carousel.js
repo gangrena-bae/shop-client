@@ -1,12 +1,11 @@
 import Carousel from "react-bootstrap/Carousel";
-import Image from "react-bootstrap/Image";
-import Image1 from "../img/Image1.jpg";
+import { Image } from "react-bootstrap";
 
 function UncontrolledExample() {
   return (
     <Carousel>
       <Carousel.Item>
-        <Image className="d-block w-100" src={Image1} alt="First slide" fluid />
+        <Image className="d-block w-100" alt="First slide" fluid />
         <Carousel.Caption>
           <h3>Первый слайд</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>

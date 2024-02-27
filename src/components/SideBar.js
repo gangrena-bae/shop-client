@@ -9,6 +9,14 @@ import Tach from "./icons/tachometer-fast-alt-svgrepo-com.svg";
 import Brake from "./icons/brake-pads-svgrepo-com.svg";
 import Engine from "./icons/engine-motor-svgrepo-com.svg";
 import Resistor from "./icons/resistor-svgrepo-com.svg";
+import {
+  ADMIN_ROUTE,
+  LOGIN_ROUTE,
+  MAIN_ROUTE,
+  SHOP_ROUTE,
+  SPECIAL_ROUTE,
+} from "../utils/consts";
+import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
   return (
@@ -16,42 +24,40 @@ const SideBar = () => {
       <header>
         <div className="navbarCustom">
           <div className="navbarCustomLogo">
-            <a href="index.html">
-              <img src={Logo} alt="" />
-            </a>
+            <img src={Logo} alt="" />
           </div>
           <ul>
             <li className="navbarListItem">
               <img src={Pc} alt="" />
-              <a href="">Преобразователи частоты</a>
+              <NavLink to={SHOP_ROUTE}>Преобразователи частоты</NavLink>
             </li>
             <li className="navbarListItem">
               <img src={Tv} alt="" />
-              <a href="">Панели оператора</a>
+              <NavLink to={SHOP_ROUTE}>Панели оператора</NavLink>
             </li>
             <li className="navbarListItem">
               <img src={Mb} alt="" />
-              <a href="">Программируемые контроллеры</a>
+              <NavLink to={SHOP_ROUTE}>Программируемые контроллеры</NavLink>
             </li>
             <li className="navbarListItem">
               <img src={Sensor} alt="" />
-              <a href="">Датчики</a>
+              <NavLink to={SHOP_ROUTE}>Датчики</NavLink>
             </li>
             <li className="navbarListItem">
               <img src={Tach} alt="" />
-              <a href="">Энкодеры</a>
+              <NavLink to={SHOP_ROUTE}>Энкодеры</NavLink>
             </li>
             <li className="navbarListItem">
               <img src={Brake} alt="" />
-              <a href="">Электромагнитные тормоза</a>
+              <NavLink to={SHOP_ROUTE}>Электромагнитные тормоза</NavLink>
             </li>
             <li className="navbarListItem">
               <img src={Engine} alt="" />
-              <a href="">Мотор-редукторы</a>
+              <NavLink to={SHOP_ROUTE}>Мотор-редукторы</NavLink>
             </li>
             <li className="navbarListItem">
               <img src={Resistor} alt="" />
-              <a href="">Валы</a>
+              <NavLink to={SHOP_ROUTE}>Валы</NavLink>
             </li>
           </ul>
         </div>

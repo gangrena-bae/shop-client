@@ -2,6 +2,14 @@ import React from "react";
 import Carousel from "../components/Carousel";
 import { Container } from "react-bootstrap";
 import Logo from "../components/icons/logoPNG.png";
+import Supp from "../components/icons/support-svgrepo-com.svg";
+import Storage from "../components/icons/storage-svgrepo-com.svg";
+import Hand from "../components/icons/handshake-svgrepo-com.svg";
+import Deliver from "../components/icons/delivery-car-svgrepo-com.svg";
+import Val from "../img/влы.png";
+import Motor from "../img/мотор.png";
+import Panel from "../img/панель.png";
+import Pch from "../img/пч.png";
 
 const MainPage = () => {
   return (
@@ -11,7 +19,7 @@ const MainPage = () => {
           <div className="sideChild">
             <div className="hover-text-one">
               <figure className="effect-text-four">
-                <img src="/img/влы.png" alt="" />
+                <img src={Val} alt="" />
                 <figcaption>
                   <h3>Винтовые передачи</h3>
                   <p>Только надежное железо</p>
@@ -23,7 +31,7 @@ const MainPage = () => {
           <div className="sideChild">
             <div className="hover-text-one">
               <figure className="effect-text-four">
-                <img src="/img/панель.png" alt="" />
+                <img src={Panel} alt="" />
                 <figcaption>
                   <h3>Редукторы</h3>
                   <p>Простое решение непростой задачи</p>
@@ -45,7 +53,7 @@ const MainPage = () => {
           <div className="sideChild">
             <div className="hover-text-one">
               <figure className="effect-text-four">
-                <img src="/img/пч.png" alt="" />
+                <img src={Pch} alt="" />
                 <figcaption>
                   <h3>Частотные преобразователи</h3>
                   <p>Высокое качество и обширные возможности</p>
@@ -57,7 +65,7 @@ const MainPage = () => {
           <div className="sideChild">
             <div className="hover-text-one">
               <figure className="effect-text-four">
-                <img src="/img/мотор.png" alt="" />
+                <img src={Motor} alt="" />
                 <figcaption>
                   <h3>Сервоприводы</h3>
                   <p>Для тех, кто ценит время и деньги</p>
@@ -88,24 +96,24 @@ const MainPage = () => {
       </section>
       <section className="features">
         <div className="featureCard">
-          <img src="/icons/storage-svgrepo-com.svg" alt="" />
+          <img src={Storage} alt="" />
           <h3 className="featureName">Собственный склад</h3>
           <p className="featureDesc">
             Большой ассортимент в наличии и под заказ
           </p>
         </div>
         <div className="featureCard">
-          <img src="/icons/support-svgrepo-com.svg" alt="" />
+          <img src={Supp} alt="" />
           <h3 className="featureName">Помощь в подборе</h3>
           <p className="featureDesc">Подберем аналог за вас</p>
         </div>
         <div className="featureCard">
-          <img src="/icons/handshake-svgrepo-com.svg" alt="" />
+          <img src={Hand} alt="" />
           <h3 className="featureName">Прозрачность сделки</h3>
           <p className="featureDesc">Предоставляем все документы</p>
         </div>
         <div className="featureCard">
-          <img src="/icons/delivery-car-svgrepo-com.svg" alt="" />
+          <img src={Deliver} alt="" />
           <h3 className="featureName">Быстрая доставка</h3>
           <p className="featureDesc">Налаженные каналы поставки</p>
         </div>

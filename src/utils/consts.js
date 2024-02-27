@@ -6,6 +6,7 @@ export const BASKET_ROUTE = "/basket";
 export const DEVICE_ROUTE = "/device";
 export const MAIN_ROUTE = "/main";
 export const SPECIAL_ROUTE = "/special";
+export const CATEGORIES_ROUTE = "/categories";
 
 // Во вкладке DeviceItem.js в новой версии react-router-dom v6 хук useHistory  заменён  на useNavigate :
 // import { useNavigate } from "react-router-dom";
