@@ -6,10 +6,10 @@ import Supp from "../components/icons/support-svgrepo-com.svg";
 import Storage from "../components/icons/storage-svgrepo-com.svg";
 import Hand from "../components/icons/handshake-svgrepo-com.svg";
 import Deliver from "../components/icons/delivery-car-svgrepo-com.svg";
-import Val from "../img/vly.png";
-import Motor from "../img/motor.png";
-import Panel from "../img/panel.png";
-import Pch from "../img/pch.png";
+import Val from "../components/icons/vly.png";
+import Motor from "../components/icons/motor.png";
+import Panel from "../components/icons/panel.png";
+import Pch from "../components/icons/pch.png";
 
 const MainPage = () => {
   return (
@@ -19,7 +19,7 @@ const MainPage = () => {
           <div className="sideChild">
             <div className="hover-text-one">
               <figure className="effect-text-four">
-                <img src={Val} alt="" />
+                <img src={Val}></img>
                 <figcaption>
                   <h3>Винтовые передачи</h3>
                   <p>Только надежное железо</p>
@@ -31,7 +31,7 @@ const MainPage = () => {
           <div className="sideChild">
             <div className="hover-text-one">
               <figure className="effect-text-four">
-                <img src={Panel} alt="" />
+                <img src={Panel}></img>
                 <figcaption>
                   <h3>Редукторы</h3>
                   <p>Простое решение непростой задачи</p>
@@ -53,7 +53,7 @@ const MainPage = () => {
           <div className="sideChild">
             <div className="hover-text-one">
               <figure className="effect-text-four">
-                <img src={Pch} alt="" />
+                <img src={Pch}></img>
                 <figcaption>
                   <h3>Частотные преобразователи</h3>
                   <p>Высокое качество и обширные возможности</p>
@@ -65,7 +65,7 @@ const MainPage = () => {
           <div className="sideChild">
             <div className="hover-text-one">
               <figure className="effect-text-four">
-                <img src={Motor} alt="" />
+                <img src={Motor}></img>
                 <figcaption>
                   <h3>Сервоприводы</h3>
                   <p>Для тех, кто ценит время и деньги</p>
@@ -96,24 +96,24 @@ const MainPage = () => {
       </section>
       <section className="features">
         <div className="featureCard">
-          <img src={Storage} alt="" />
+          <img src={Storage} />
           <h3 className="featureName">Собственный склад</h3>
           <p className="featureDesc">
             Большой ассортимент в наличии и под заказ
           </p>
         </div>
         <div className="featureCard">
-          <img src={Supp} alt="" />
+          <img src={Supp} />
           <h3 className="featureName">Помощь в подборе</h3>
           <p className="featureDesc">Подберем аналог за вас</p>
         </div>
         <div className="featureCard">
-          <img src={Hand} alt="" />
+          <img src={Hand} />
           <h3 className="featureName">Прозрачность сделки</h3>
           <p className="featureDesc">Предоставляем все документы</p>
         </div>
         <div className="featureCard">
-          <img src={Deliver} alt="" />
+          <img src={Deliver} />
           <h3 className="featureName">Быстрая доставка</h3>
           <p className="featureDesc">Налаженные каналы поставки</p>
         </div>
@@ -127,44 +127,32 @@ const MainPage = () => {
                 src="img/autonics-seeklogo.com.png"
                 height="100"
                 width="250"
-                alt=""
               />
             </div>
             <div className="slide">
-              <img
-                src="img/Mitsubishi_Electric.png"
-                height="100"
-                width="250"
-                alt=""
-              />
+              <img src="img/Mitsubishi_Electric.png" height="100" width="250" />
             </div>
             <div className="slide">
-              <img src="img/Siemens.png" height="100" width="250" alt="" />
+              <img src="img/Siemens.png" height="100" width="250" />
             </div>
             <div className="slide">
-              <img src="/img/weintek.png" height="100" width="250" alt="" />
+              <img src="/img/weintek.png" height="100" width="250" />
             </div>
             <div className="slide">
               <img
                 src="img/autonics-seeklogo.com.png"
                 height="100"
                 width="250"
-                alt=""
               />
             </div>
             <div className="slide">
-              <img
-                src="img/Mitsubishi_Electric.png"
-                height="100"
-                width="250"
-                alt=""
-              />
+              <img src="img/Mitsubishi_Electric.png" height="100" width="250" />
             </div>
             <div className="slide">
-              <img src="img/Siemens.png" height="100" width="250" alt="" />
+              <img src="img/Siemens.png" height="100" width="250" />
             </div>
             <div className="slide">
-              <img src="/img/weintek.png" height="100" width="250" alt="" />
+              <img src="/img/weintek.png" height="100" width="250" />
             </div>
           </div>
         </div>
@@ -175,15 +163,15 @@ const MainPage = () => {
           <div className="contactLeftInfo">
             <h2>Контакты</h2>
             <p>
-              <img src="/icons/pin-svgrepo-com.svg" alt="" />
+              <img src="/icons/pin-svgrepo-com.svg" />
               Адрес: г. Москва, ул. Cеребрякова, 14, стр. 15
             </p>
             <p>
-              <img src="/icons/phone-outgoing-svgrepo-com.svg" alt="" />
+              <img src="/icons/phone-outgoing-svgrepo-com.svg" />
               Телефон: +79673506321
             </p>
             <p>
-              <img src="/icons/mail-alt-3-svgrepo-com.svg" alt="" />
+              <img src="/icons/mail-alt-3-svgrepo-com.svg" />
               Email: client@rolltex.ru
             </p>
           </div>
