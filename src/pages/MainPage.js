@@ -6,10 +6,10 @@ import Supp from "../components/icons/support-svgrepo-com.svg";
 import Storage from "../components/icons/storage-svgrepo-com.svg";
 import Hand from "../components/icons/handshake-svgrepo-com.svg";
 import Deliver from "../components/icons/delivery-car-svgrepo-com.svg";
-import Val from "../img/влы.png";
-import Motor from "../img/мотор.png";
-import Panel from "../img/панель.png";
-import Pch from "../img/пч.png";
+import Val from "../img/vly.png";
+import Motor from "../img/motor.png";
+import Panel from "../img/panel.png";
+import Pch from "../img/pch.png";
 
 const MainPage = () => {
   return (
