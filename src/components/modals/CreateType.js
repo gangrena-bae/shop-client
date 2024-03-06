@@ -17,7 +17,7 @@ const CreateType = ({ show, onHide }) => {
   return (
     <Modal show={show} onHide={onHide} centered>
       <Modal.Header closeButton>
-        <Modal.Title>Добавить тип</Modal.Title>
+        <Modal.Title>Добавить категорию</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
@@ -25,7 +25,7 @@ const CreateType = ({ show, onHide }) => {
             <Form.Control
               value={value}
               onChange={(e) => setValue(e.target.value)}
-              placeholder="Название типа"
+              placeholder="Название категории"
               autoFocus
             />
           </Form.Group>

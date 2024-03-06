@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "../components/Carousel";
-import { Container, Image } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import Logo from "../components/icons/logoPNG.png";
 import Supp from "../components/icons/support-svgrepo-com.svg";
 import Storage from "../components/icons/storage-svgrepo-com.svg";
@@ -10,6 +10,14 @@ import Val from "../components/icons/vly.png";
 import Motor from "../components/icons/motor.png";
 import Panel from "../components/icons/panel.png";
 import Pch from "../components/icons/pch.png";
+import {
+  ADMIN_ROUTE,
+  LOGIN_ROUTE,
+  MAIN_ROUTE,
+  SHOP_ROUTE,
+  SPECIAL_ROUTE,
+} from "../utils/consts";
+import { NavLink } from "react-router-dom";
 
 const MainPage = () => {
   return (
@@ -17,27 +25,31 @@ const MainPage = () => {
       <div className="parent">
         <div className="child">
           <div className="sideChild">
-            <div className="hover-text-one">
-              <figure className="effect-text-four">
-                <Image src={Val}></Image>
-                <figcaption>
-                  <h3>Винтовые передачи</h3>
-                  <p>Только надежное железо</p>
-                </figcaption>
-              </figure>
-            </div>
+            <NavLink to={SHOP_ROUTE}>
+              <div className="hover-text-one">
+                <figure className="effect-text-four">
+                  <Image src={Val}></Image>
+                  <figcaption>
+                    <h3>Винтовые передачи</h3>
+                    <p>Только надежное железо</p>
+                  </figcaption>
+                </figure>
+              </div>
+            </NavLink>
           </div>
 
           <div className="sideChild">
-            <div className="hover-text-one">
-              <figure className="effect-text-four">
-                <Image src={Panel}></Image>
-                <figcaption>
-                  <h3>Редукторы</h3>
-                  <p>Простое решение непростой задачи</p>
-                </figcaption>
-              </figure>
-            </div>
+            <NavLink to={SHOP_ROUTE}>
+              <div className="hover-text-one">
+                <figure className="effect-text-four">
+                  <Image src={Panel}></Image>
+                  <figcaption>
+                    <h3>Редукторы</h3>
+                    <p>Простое решение непростой задачи</p>
+                  </figcaption>
+                </figure>
+              </div>
+            </NavLink>
           </div>
         </div>
         <div className="bigChild">
@@ -47,31 +59,49 @@ const MainPage = () => {
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium.
             </p>
+            <Row>
+              <Col>
+                <NavLink to={SHOP_ROUTE}>
+                  <Button variant="outline-dark">Каталог</Button>
+                </NavLink>
+              </Col>
+              <Col>
+                <NavLink to={SPECIAL_ROUTE}>
+                  <Button variant="outline-dark" className="text-nowrap">
+                    Связаться с нами
+                  </Button>
+                </NavLink>
+              </Col>
+            </Row>
           </div>
         </div>
         <div className="child">
           <div className="sideChild">
-            <div className="hover-text-one">
-              <figure className="effect-text-four">
-                <img src={Pch}></img>
-                <figcaption>
-                  <h3>Частотные преобразователи</h3>
-                  <p>Высокое качество и обширные возможности</p>
-                </figcaption>
-              </figure>
-            </div>
+            <NavLink to={SHOP_ROUTE}>
+              <div className="hover-text-one">
+                <figure className="effect-text-four">
+                  <img src={Pch}></img>
+                  <figcaption>
+                    <h3>Преобразователи</h3>
+                    <p>Высокое качество и обширные возможности</p>
+                  </figcaption>
+                </figure>
+              </div>
+            </NavLink>
           </div>
 
           <div className="sideChild">
-            <div className="hover-text-one">
-              <figure className="effect-text-four">
-                <Image src={Motor}></Image>
-                <figcaption>
-                  <h3>Сервоприводы</h3>
-                  <p>Для тех, кто ценит время и деньги</p>
-                </figcaption>
-              </figure>
-            </div>
+            <NavLink to={SHOP_ROUTE}>
+              <div className="hover-text-one">
+                <figure className="effect-text-four">
+                  <Image src={Motor}></Image>
+                  <figcaption>
+                    <h3>Сервоприводы</h3>
+                    <p>Для тех, кто ценит время и деньги</p>
+                  </figcaption>
+                </figure>
+              </div>
+            </NavLink>
           </div>
         </div>
       </div>

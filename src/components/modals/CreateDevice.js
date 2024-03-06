@@ -19,6 +19,8 @@ const CreateDevice = observer(({ show, onHide }) => {
   const [price, setPrice] = useState(0);
   const [file, setFile] = useState(null);
   const [info, setInfo] = useState([]);
+  const [stock, setStock] = useState(true);
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     fetchTypes().then((data) => device.setTypes(data));
@@ -43,6 +45,14 @@ const CreateDevice = observer(({ show, onHide }) => {
     setFile(e.target.files[0]);
   };
 
+  const handleStockChange = (e) => {
+    setStock(e.target.checked);
+  };
+
+  const handleDescriptionChange = (e) => {
+    setDescription(e.target.value);
+  };
+
   const addDevice = () => {
     const formData = new FormData();
     formData.append("name", name);
@@ -51,13 +61,15 @@ const CreateDevice = observer(({ show, onHide }) => {
     formData.append("brandId", device.selectedBrand.id);
     formData.append("typeId", device.selectedType.id);
     formData.append("info", JSON.stringify(info));
+    formData.append("stock", stock); // Добавлен параметр "stock"
+    formData.append("description", description); // Добавлен параметр "description"
     createDevice(formData).then((data) => onHide());
   };
 
   return (
     <Modal show={show} onHide={onHide} centered>
       <Modal.Header closeButton>
-        <Modal.Title>Добавить устройство</Modal.Title>
+        <Modal.Title>Добавить товар</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
@@ -104,6 +116,20 @@ const CreateDevice = observer(({ show, onHide }) => {
               value={price}
               onChange={(e) => setPrice(Number(e.target.value))}
               type="number"
+            />
+            <Form.Check
+              type="switch"
+              id="stock-switch"
+              label="В наличии"
+              checked={stock}
+              onChange={handleStockChange}
+              className="mt-2 mb-2"
+            />
+            <Form.Control
+              placeholder="Описание"
+              value={description}
+              onChange={handleDescriptionChange}
+              className="mt-2 mb-2"
             />
             <Form.Control
               placeholder="Изображение"

@@ -205,11 +205,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  width: 50%;
-  height: 50%;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  height: 0%;
   color: black;
-  margin-left: 5%;
+  margin-left: 0;
   padding: 0;
 }
 .child {
@@ -234,12 +235,12 @@ body {
 .bigChild {
   display: flex;
   background-size: cover;
-  background: linear-gradient(to bottom, #5f5c5f, #0074ca);
+  background: linear-gradient(to bottom, transparent, #0074ca);
   background-position: center;
   height: 100%;
   width: 50%;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   transition: filter 1s ease;
   overflow: hidden;
 }
@@ -254,12 +255,12 @@ body {
 
 .bigChild p {
   padding-top: 10%;
-  text-align: start;
+  /* text-align: start; */
 }
 
-/* .sideChild:hover {
-  filter: brightness(70%); /* Затемнение при наведении 
-} */
+.sideChild:hover {
+  filter: brightness(130%);
+}
 
 @media (max-width: 1300px) {
   .parent {
@@ -373,17 +374,17 @@ figure.effect-text-four p {
   padding: 10px 0;
 }
 figure.effect-text-four p {
-  bottom: 30px;
+  bottom: 100px;
   line-height: 1.5;
   -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
 }
 figure.effect-text-four h3 {
-  top: 30px;
+  top: 190px;
   -webkit-transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
-  -webkit-transform: translate3d(0, 20px, 0);
-  transform: translate3d(0, 20px, 0);
+  -webkit-transform: translate3d(0, 100px, 0);
+  transform: translate3d(0, 100px, 0);
 }
 figure.effect-text-four:hover h3 {
   -webkit-transform: translate3d(0, 0, 0);

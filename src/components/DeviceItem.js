@@ -10,8 +10,8 @@ const DeviceItem = observer(({ device }) => {
   const navigate = useNavigate();
 
   return (
-    <Col md={3} className="mt-3">
-      <Card>
+    <Col md={3} className="mt-2">
+      <Card border="primary">
         <Card.Img
           width={150}
           height={150}

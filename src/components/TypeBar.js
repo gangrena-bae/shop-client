@@ -47,7 +47,7 @@ const TypeBar = observer(() => {
 
   return (
     <div>
-      <ListGroup vertical>
+      <ListGroup vertical className="mt-2">
         {device.types.map((type) => (
           <ListGroupItem
             action

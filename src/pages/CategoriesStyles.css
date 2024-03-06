@@ -5,6 +5,11 @@
   justify-content: center;
   align-items: center;
 } */
+
+.link {
+  color: inherit; /* Сохраняет цвет текста по умолчанию */
+  text-decoration: none; /* Убирает подчеркивание */
+}
 .categoryCard {
   display: flex;
   flex-direction: column;
@@ -12,9 +17,10 @@
   align-items: center;
   width: 200px;
   height: 200px;
-  background: linear-gradient(70deg, #0074CA, #5f5c5f);
+  background: linear-gradient(70deg, #0074ca, #5f5c5f);
   cursor: pointer;
   margin: 10px;
+  text-decoration: none;
 }
 .categoryCard img {
   width: 50%;
@@ -32,7 +38,7 @@
   position: relative;
   display: flex;
   justify-content: space-evenly;
-
+  text-decoration: none;
   flex-wrap: wrap;
 }
 
@@ -58,7 +64,7 @@
 }
 
 .container-cat .card-cat:hover .face.face1 {
-  background: linear-gradient(70deg, #0074CA, #5f5c5f);
+  background: linear-gradient(70deg, #0074ca, #5f5c5f);
   transform: translateY(0);
 }
 
@@ -125,4 +131,5 @@
 .container-cat .card-cat .face.face2 .content-cat a:hover {
   background: #333;
   color: #fff;
+  text-decoration: none;
 }

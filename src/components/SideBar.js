@@ -23,9 +23,11 @@ const SideBar = () => {
     <div>
       <header>
         <div className="navbarCustom">
-          <div className="navbarCustomLogo">
-            <img src={Logo} alt="" />
-          </div>
+          <NavLink to={MAIN_ROUTE}>
+            <div className="navbarCustomLogo">
+              <img src={Logo} alt="" />
+            </div>
+          </NavLink>
           <ul>
             <li className="navbarListItem">
               <img src={Pc} alt="" />

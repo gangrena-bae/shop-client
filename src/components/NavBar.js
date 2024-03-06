@@ -70,11 +70,11 @@ const NavBar = observer(() => {
           <li>
             <NavLink to={MAIN_ROUTE}>Главная</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to={SHOP_ROUTE}>Каталог</NavLink>
-          </li>
+          </li> */}
           <li>
-            <NavLink to={CATEGORIES_ROUTE}>Категории</NavLink>
+            <NavLink to={CATEGORIES_ROUTE}>Каталог</NavLink>
           </li>
           <li>
             <NavLink to={SPECIAL_ROUTE}>Связаться с нами</NavLink>

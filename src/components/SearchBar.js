@@ -1,29 +1,60 @@
-// import React, { useState, useContext } from "react";
+// import React, { useState } from "react";
 // import { Form, FormControl, Button } from "react-bootstrap";
-// import { Context } from "../index";
 
-// const SearchBar = () => {
-//   const { device } = useContext(Context);
+// const SearchBar = ({ onSearch }) => {
 //   const [searchTerm, setSearchTerm] = useState("");
 
 //   const handleSearch = () => {
-//     device.searchDevicesByName(searchTerm); // Вызываем функцию поиска из контекста
+//     onSearch(searchTerm);
 //   };
 
 //   return (
-//     <Form inline>
+//     <Form inlin>
 //       <FormControl
 //         type="text"
-//         placeholder="Поиск по названию"
-//         className="mr-sm-2"
+//         placeholder="Поиск"
+//         className="mr-sm-2 mt-2"
 //         value={searchTerm}
 //         onChange={(e) => setSearchTerm(e.target.value)}
 //       />
-//       <Button variant="outline-success" onClick={handleSearch}>
-//         Искать
-//       </Button>
+//       <Button className="mt-2" onClick={handleSearch}>Поиск</Button>
 //     </Form>
 //   );
 // };
 
 // export default SearchBar;
+import React, { useState } from "react";
+import { Form, FormControl, Button } from "react-bootstrap";
+
+const SearchBar = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = () => {
+    onSearch(searchTerm);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault(); // Prevent page reload
+      handleSearch();
+    }
+  };
+
+  return (
+    <Form inline className="d-flex mt-2">
+      <FormControl
+        type="text"
+        placeholder="Поиск"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        onKeyPress={handleKeyPress}
+        className="mr-sm-2"
+      />
+      <Button onClick={handleSearch} className="ml-2">
+        Поиск
+      </Button>
+    </Form>
+  );
+};
+
+export default SearchBar;
