@@ -62,7 +62,7 @@ const MainPage = () => {
             <Row>
               <Col>
                 <NavLink to={SHOP_ROUTE}>
-                  <Button variant="outline-dark">Каталог</Button>
+                  <Button variant="outline-dark">Магазин</Button>
                 </NavLink>
               </Col>
               <Col>
