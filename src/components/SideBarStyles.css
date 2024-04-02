@@ -42,8 +42,14 @@
   border-color: #0074ca;
   color: #fff;
 }
-
 .navbarCustom a {
+  text-decoration: none;
+  color: #5f5c5f;
+  margin: 3px;
+  font-size: 15px;
+}
+
+.navbarCustom span {
   text-decoration: none;
   color: #5f5c5f;
   margin: 3px;

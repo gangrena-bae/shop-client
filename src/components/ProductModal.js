@@ -9,9 +9,17 @@ import {
   updateDeviceDescription,
   updateDevicePrice,
   updateDeviceInfo,
+  updateDeviceImage,
+  updateAdditionalFiles,
+  updateDeviceBrand,
+  updateDeviceType,
 } from "../http/deviceAPI";
 
 const ProductModal = ({ show, onHide, product }) => {
+  const [brands, setBrands] = useState([]);
+  const [types, setTypes] = useState([]);
+  const [selectedBrandId, setSelectedBrandId] = useState("");
+  const [selectedTypeId, setSelectedTypeId] = useState("");
   const [brandName, setBrandName] = useState("");
   const [typeName, setTypeName] = useState("");
   const [device, setDevice] = useState({
@@ -23,6 +31,22 @@ const ProductModal = ({ show, onHide, product }) => {
   const [editedDescription, setEditedDescription] = useState("");
   const [editedPrice, setEditedPrice] = useState("");
   const [editedInfo, setEditedInfo] = useState({});
+  const [imageFile, setImageFile] = useState(null);
+  const [additionalFiles, setAdditionalFiles] = useState(null);
+
+  useEffect(() => {
+    if (product) {
+      // Установка начальных значений для редактирования
+      setSelectedBrandId(product.brandId);
+      setSelectedTypeId(product.typeId);
+      fetchOneDevice(product.id).then((data) => {
+        setDevice(data);
+      });
+    }
+    // Загрузка доступных брендов и типов
+    fetchBrands().then((data) => setBrands(data));
+    fetchTypes().then((data) => setTypes(data));
+  }, [product]);
 
   useEffect(() => {
     if (product) {
@@ -54,34 +78,91 @@ const ProductModal = ({ show, onHide, product }) => {
     setEditing(field);
   };
 
-  const handleSave = async (field) => {
-    if (field === "name") {
-      await updateDeviceName(product.id, editedName);
-    } else if (field === "description") {
-      await updateDeviceDescription(product.id, editedDescription);
-    } else if (field === "price") {
-      await updateDevicePrice(product.id, editedPrice);
-    } else if (field.startsWith("info")) {
-      const infoIndex = parseInt(field.split("-")[1]);
-      const updatedInfo = {
-        ...device.info[infoIndex],
-        description: editedInfo[device.info[infoIndex].id], // Исправлен доступ к description
-      };
-      const updatedInfoResponse = await updateDeviceInfo(
-        device.info[infoIndex].id,
-        updatedInfo.title,
-        updatedInfo.description
-      );
-      if (updatedInfoResponse.message === "Info updated successfully") {
-        const updatedInfoList = device.info.map((item, index) =>
-          index === infoIndex ? updatedInfoResponse.info : item
-        );
-        setDevice({ ...device, info: updatedInfoList });
-      } else {
-        // Обработка ошибки, если не удалось обновить информацию
-      }
+  const handleUpdateImage = async () => {
+    if (!imageFile || imageFile.length === 0) {
+      alert("Выберите файлы изображений.");
+      return;
     }
-    setEditing(null); // Сброс состояния редактирования после сохранения
+    const formData = new FormData();
+    // Добавляем каждый выбранный файл в formData
+    Array.from(imageFile).forEach((file) => {
+      formData.append("img", file); // Используйте "img" вместо "images[${index}]"
+    });
+    try {
+      const response = await updateDeviceImage(product.id, formData); // Убедитесь, что API поддерживает этот формат
+      alert("Изображение успешно обновлено.");
+      onHide(); // Закрыть модальное окно
+    } catch (error) {
+      alert("Ошибка при загрузке изображения: " + error.message);
+    }
+  };
+
+  const handleUpdateAdditionalFiles = async () => {
+    if (!additionalFiles || additionalFiles.length === 0) {
+      alert("Выберите дополнительные файлы.");
+      return;
+    }
+    const formData = new FormData();
+    // Добавляем каждый выбранный файл в formData
+    Array.from(additionalFiles).forEach((file) => {
+      formData.append("additionalFiles", file);
+    });
+
+    try {
+      const response = await updateAdditionalFiles(product.id, formData); // Предполагается, что у вас есть такой метод
+      alert("Дополнительные файлы успешно обновлены.");
+      onHide(); // Закрыть модальное окно
+    } catch (error) {
+      alert("Ошибка при загрузке дополнительных файлов: " + error.message);
+    }
+  };
+
+  const handleSave = async (field) => {
+    try {
+      switch (field) {
+        case "brand":
+          await updateDeviceBrand(product.id, selectedBrandId);
+          break;
+        case "type":
+          await updateDeviceType(product.id, selectedTypeId);
+          break;
+        case "name":
+          await updateDeviceName(product.id, editedName);
+          break;
+        case "description":
+          await updateDeviceDescription(product.id, editedDescription);
+          break;
+        case "price":
+          await updateDevicePrice(product.id, editedPrice);
+          break;
+        case field.match(/^info-\d+$/)?.input: // Проверяем, соответствует ли field шаблону "info-индекс"
+          const infoIndex = parseInt(field.split("-")[1], 10);
+          const infoToUpdate = device.info[infoIndex];
+          if (!infoToUpdate) {
+            console.error("Info to update not found.");
+            return;
+          }
+          const updatedInfo = await updateDeviceInfo(infoToUpdate.id, {
+            title: infoToUpdate.title,
+            description: editedInfo[infoToUpdate.id],
+          });
+          // Обновляем локальное состояние устройства
+          setDevice((prevDevice) => ({
+            ...prevDevice,
+            info: prevDevice.info.map((item, index) =>
+              index === infoIndex ? updatedInfo : item
+            ),
+          }));
+          break;
+        default:
+          console.error("Unknown field to update:", field);
+      }
+      console.log(`${field} updated successfully.`);
+    } catch (error) {
+      console.error(`Error updating ${field}:`, error);
+    } finally {
+      setEditing(null); // Сброс состояния редактирования после сохранения
+    }
   };
 
   return (
@@ -157,8 +238,52 @@ const ProductModal = ({ show, onHide, product }) => {
                     </div>
                   )}
                 </Form.Group>
-                <Card.Text>Бренд: {brandName}</Card.Text>
-                <Card.Text>Категория: {typeName}</Card.Text>
+                <Form.Group className="mb-3">
+                  <Form.Label>Бренд:</Form.Label>
+                  <Form.Select
+                    value={selectedBrandId}
+                    onChange={(e) => {
+                      setSelectedBrandId(e.target.value);
+                      setEditing("brand"); // Установка состояния редактирования при изменении бренда
+                    }}
+                  >
+                    {brands.map((brand) => (
+                      <option key={brand.id} value={brand.id}>
+                        {brand.name}
+                      </option>
+                    ))}
+                  </Form.Select>
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                  <Form.Label>Тип:</Form.Label>
+                  <Form.Select
+                    value={selectedTypeId}
+                    onChange={(e) => {
+                      setSelectedTypeId(e.target.value);
+                      setEditing("type"); // Установка состояния редактирования при изменении типа
+                    }}
+                  >
+                    {types.map((type) => (
+                      <option key={type.id} value={type.id}>
+                        {type.name}
+                      </option>
+                    ))}
+                  </Form.Select>
+                </Form.Group>
+                <Form.Group className="mb-3">
+                  <Form.Label>Изображение:</Form.Label>
+                  <Form.Control
+                    type="file"
+                    multiple
+                    onChange={(e) => setImageFile(e.target.files)} // Сохраняем FileList
+                  />
+                </Form.Group>
+                {imageFile && (
+                  <Button variant="primary" onClick={() => handleUpdateImage()}>
+                    Загрузить изображение
+                  </Button>
+                )}
                 {device.info.map((info, index) => (
                   <Form.Group key={info.id} className="mb-3">
                     <Form.Label>{info.title}:</Form.Label>
@@ -188,6 +313,22 @@ const ProductModal = ({ show, onHide, product }) => {
                     )}
                   </Form.Group>
                 ))}
+                <Form.Group className="mb-3">
+                  <Form.Label>Дополнительные файлы:</Form.Label>
+                  <Form.Control
+                    type="file"
+                    multiple
+                    onChange={(e) => setAdditionalFiles(e.target.files)} // Сохраняем FileList
+                  />
+                </Form.Group>
+                {additionalFiles && (
+                  <Button
+                    variant="primary"
+                    onClick={handleUpdateAdditionalFiles}
+                  >
+                    Загрузить дополнительные файлы
+                  </Button>
+                )}
               </Form>
             </Card.Body>
           </Card>

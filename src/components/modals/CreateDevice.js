@@ -17,7 +17,7 @@ const CreateDevice = observer(({ show, onHide }) => {
   const { device } = useContext(Context);
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState([]);
   const [info, setInfo] = useState([]);
   const [stock, setStock] = useState(true);
   const [description, setDescription] = useState("");
@@ -42,7 +42,7 @@ const CreateDevice = observer(({ show, onHide }) => {
   };
 
   const selectFile = (e) => {
-    setFile(e.target.files[0]);
+    setFile(e.target.files); // Сохраняем все выбранные файлы
   };
 
   const handleStockChange = (e) => {
@@ -57,12 +57,16 @@ const CreateDevice = observer(({ show, onHide }) => {
     const formData = new FormData();
     formData.append("name", name);
     formData.append("price", `${price}`);
-    formData.append("img", file);
+    // Добавляем каждый файл в FormData
+    for (let i = 0; i < file.length; i++) {
+      formData.append("img", file[i]);
+    }
     formData.append("brandId", device.selectedBrand.id);
     formData.append("typeId", device.selectedType.id);
     formData.append("info", JSON.stringify(info));
-    formData.append("stock", stock); // Добавлен параметр "stock"
-    formData.append("description", description); // Добавлен параметр "description"
+    formData.append("stock", stock);
+    formData.append("description", description);
+
     createDevice(formData).then((data) => onHide());
   };
 
@@ -132,11 +136,11 @@ const CreateDevice = observer(({ show, onHide }) => {
               className="mt-2 mb-2"
             />
             <Form.Control
-              placeholder="Изображение"
-              autoFocus
+              placeholder="Изображения"
               className="mt-2 mb-2"
               type="file"
               onChange={selectFile}
+              multiple // Разрешаем выбор нескольких файлов
             />
           </Form.Group>
           <hr />

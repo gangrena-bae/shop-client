@@ -26,29 +26,35 @@ const CartForm = observer(() => {
     if (form.checkValidity() === false) {
       event.stopPropagation();
     } else {
-      const formData = new FormData();
-      formData.append("firstName", firstName);
-      formData.append("lastName", lastName);
-      formData.append("city", city);
-      formData.append("phone", phone);
-      formData.append("email", email);
-      formData.append("type", type);
-      formData.append("totalCost", cart.totalCost);
-      formData.append("cartList", productList);
-      console.log(Object.fromEntries(formData));
-      createOrder(formData);
+      // Создаем объект для отправки данных
+      const orderData = {
+        firstName,
+        lastName,
+        city,
+        phone,
+        email,
+        type,
+        totalCost: cart.totalCost,
+        // Формируем список товаров как строку JSON
+        cartList: JSON.stringify(
+          cart.items.map((item) => ({
+            name: item.name,
+            count: item.count,
+            price: item.price,
+          }))
+        ),
+      };
+
+      console.log(orderData); // Для проверки, что данные сформированы правильно
+      createOrder(orderData); // Предполагается, что createOrder может обрабатывать такой формат
     }
     setValidated(true);
   };
-  // Сам себя переиграл и отказался от этой хуйни
-  // {
-  //   cart.items.map((item, index) => formData.append(`${index}`, item.name));
-  // }
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Row className="mb-2">
         <Form.Group as={Col} controlId="validationCustom01">
-          <Form.Label>Имя</Form.Label> 
+          <Form.Label>Имя</Form.Label>
           <Form.Control
             required
             value={firstName}

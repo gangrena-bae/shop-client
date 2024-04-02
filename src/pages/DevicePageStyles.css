@@ -703,10 +703,12 @@
   margin: 30px;
 }
 .left_side {
-  width: 50%;
-  height: 500px;
-  display: flex;
-  justify-content: center;
+  width: 60%;
+  height: 100%;
+}
+.carousel-item img {
+  width: 500px;
+  height: 450px;
 }
 .right_side {
   width: 40%;

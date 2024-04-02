@@ -8,6 +8,7 @@ import { Context } from "../index";
 const DeviceItem = observer(({ device }) => {
   const { cart } = useContext(Context);
   const navigate = useNavigate();
+  const images = JSON.parse(device.img);
 
   return (
     <Col md={3} className="mt-2">
@@ -17,7 +18,7 @@ const DeviceItem = observer(({ device }) => {
           height={150}
           thumbnail
           variant="top"
-          src={process.env.REACT_APP_API_URL + device.img}
+          src={`${process.env.REACT_APP_API_URL}${images[0]}`}
           className="mt-3 object-fit-contain"
         />
         <Card.Body>

@@ -105,7 +105,41 @@ export const updateDeviceDescription = async (id, description) => {
   return data;
 };
 
-// Обновление изображения устройства
-export const updateDeviceImage = async (id, image) => {
-  // Логика обновления изображения устройства
+export const updateDeviceImage = async (id, formData) => {
+  // Не нужно создавать новый formData, используем переданный
+  const { data } = await $authHost.put(
+    `api/device/updateImage/${id}`,
+    formData,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    }
+  );
+
+  return data;
+};
+
+// Обновление дополнительных файлов устройства
+export const updateAdditionalFiles = async (id, formData) => {
+  const { data } = await $authHost.post(
+    `api/device/${id}/updateAdditionalFiles`,
+    formData,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    }
+  );
+  return data;
+};
+
+export const updateDeviceBrand = async (id, brandId) => {
+  const { data } = await $authHost.patch(`api/device/${id}/brand`, { brandId });
+  return data;
+};
+
+export const updateDeviceType = async (id, typeId) => {
+  const { data } = await $authHost.patch(`api/device/${id}/type`, { typeId });
+  return data;
 };
