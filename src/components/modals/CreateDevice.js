@@ -1,23 +1,23 @@
 import React, { useContext, useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Modal from "react-bootstrap/Modal";
-import { Context } from "../..";
-import { Col, Dropdown, Row, CloseButton } from "react-bootstrap";
-import DropdownButton from "react-bootstrap/DropdownButton";
 import {
-  createDevice,
-  fetchBrands,
-  fetchDevices,
-  fetchTypes,
-} from "../../http/deviceAPI";
+  Button,
+  Form,
+  Modal,
+  Row,
+  Col,
+  Dropdown,
+  CloseButton,
+} from "react-bootstrap";
+import DropdownButton from "react-bootstrap/DropdownButton";
 import { observer } from "mobx-react-lite";
+import { Context } from "../../index"; // Проверьте правильность пути
+import { createDevice, fetchBrands, fetchTypes } from "../../http/deviceAPI";
 
 const CreateDevice = observer(({ show, onHide }) => {
   const { device } = useContext(Context);
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
-  const [file, setFile] = useState([]);
+  const [images, setImages] = useState([]); // Используем массив для хранения информации об изображениях
   const [info, setInfo] = useState([]);
   const [stock, setStock] = useState(true);
   const [description, setDescription] = useState("");
@@ -25,12 +25,12 @@ const CreateDevice = observer(({ show, onHide }) => {
   useEffect(() => {
     fetchTypes().then((data) => device.setTypes(data));
     fetchBrands().then((data) => device.setBrands(data));
-    fetchDevices().then((data) => device.setDevices(data.rows));
-  }, []);
+  }, [device]);
 
   const addInfo = () => {
     setInfo([...info, { title: "", description: "", number: Date.now() }]);
   };
+
   const removeInfo = (number) => {
     setInfo(info.filter((i) => i.number !== number));
   };
@@ -41,8 +41,18 @@ const CreateDevice = observer(({ show, onHide }) => {
     );
   };
 
-  const selectFile = (e) => {
-    setFile(e.target.files); // Сохраняем все выбранные файлы
+  const addImage = () => {
+    setImages([...images, { file: null, number: Date.now() }]);
+  };
+
+  const changeImage = (file, number) => {
+    setImages(
+      images.map((img) => (img.number === number ? { ...img, file } : img))
+    );
+  };
+
+  const removeImage = (number) => {
+    setImages(images.filter((img) => img.number !== number));
   };
 
   const handleStockChange = (e) => {
@@ -57,16 +67,16 @@ const CreateDevice = observer(({ show, onHide }) => {
     const formData = new FormData();
     formData.append("name", name);
     formData.append("price", `${price}`);
-    // Добавляем каждый файл в FormData
-    for (let i = 0; i < file.length; i++) {
-      formData.append("img", file[i]);
-    }
     formData.append("brandId", device.selectedBrand.id);
     formData.append("typeId", device.selectedType.id);
     formData.append("info", JSON.stringify(info));
     formData.append("stock", stock);
     formData.append("description", description);
-
+    images.forEach(({ file }) => {
+      if (file) {
+        formData.append("img", file);
+      }
+    });
     createDevice(formData).then((data) => onHide());
   };
 
@@ -77,74 +87,94 @@ const CreateDevice = observer(({ show, onHide }) => {
       </Modal.Header>
       <Modal.Body>
         <Form>
-          <Form.Group className="mb-3" as={Col}>
-            <DropdownButton
-              id="dropdown-basic-button"
-              title={device.selectedType.name || "Выберите тип"}
-              className="mt-2 mb-2"
-            >
-              {device.types.map((type) => (
-                <Dropdown.Item
-                  onClick={() => device.setSelectedType(type)}
-                  key={type.id}
-                >
-                  {type.name}
-                </Dropdown.Item>
-              ))}
-            </DropdownButton>
-            <DropdownButton
-              id="dropdown-basic-button"
-              title={device.selectedBrand.name || "Выберите тип"}
-              className="mt-2 mb-2"
-            >
-              {device.brands.map((brand) => (
-                <Dropdown.Item
-                  onClick={() => device.setSelectedBrand(brand)}
-                  key={brand.id}
-                >
-                  {brand.name}
-                </Dropdown.Item>
-              ))}
-            </DropdownButton>
-            <Form.Control
-              placeholder="Название"
-              autoFocus
-              className="mt-2 mb-2"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <Form.Control
-              placeholder="Цена (Указывать валюту не нужно)"
-              autoFocus
-              className="mt-2 mb-2"
-              value={price}
-              onChange={(e) => setPrice(Number(e.target.value))}
-              type="number"
-            />
-            <Form.Check
-              type="switch"
-              id="stock-switch"
-              label="В наличии"
-              checked={stock}
-              onChange={handleStockChange}
-              className="mt-2 mb-2"
-            />
-            <Form.Control
-              placeholder="Описание"
-              value={description}
-              onChange={handleDescriptionChange}
-              className="mt-2 mb-2"
-            />
-            <Form.Control
-              placeholder="Изображения"
-              className="mt-2 mb-2"
-              type="file"
-              onChange={selectFile}
-              multiple // Разрешаем выбор нескольких файлов
-            />
-          </Form.Group>
+          {/* Форма для добавления товара */}
+          <DropdownButton
+            id="dropdown-type-button"
+            title={device.selectedType.name || "Выберите тип"}
+            className="mt-2 mb-2"
+          >
+            {device.types.map((type) => (
+              <Dropdown.Item
+                onClick={() => device.setSelectedType(type)}
+                key={type.id}
+              >
+                {type.name}
+              </Dropdown.Item>
+            ))}
+          </DropdownButton>
+          <DropdownButton
+            id="dropdown-brand-button"
+            title={device.selectedBrand.name || "Выберите бренд"}
+            className="mt-2 mb-2"
+          >
+            {device.brands.map((brand) => (
+              <Dropdown.Item
+                onClick={() => device.setSelectedBrand(brand)}
+                key={brand.id}
+              >
+                {brand.name}
+              </Dropdown.Item>
+            ))}
+          </DropdownButton>
+          <Form.Control
+            placeholder="Название"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="mt-2 mb-2"
+          />
+          <Form.Control
+            placeholder="Цена"
+            type="number"
+            value={price}
+            onChange={(e) => setPrice(Number(e.target.value))}
+            className="mt-2 mb-2"
+          />
+          <Form.Check
+            type="switch"
+            id="stock-switch"
+            label="В наличии"
+            checked={stock}
+            onChange={handleStockChange}
+            className="mt-2 mb-2"
+          />
+          <Form.Control
+            placeholder="Описание"
+            as="textarea"
+            rows={3}
+            value={description}
+            onChange={handleDescriptionChange}
+            className="mt-2 mb-2"
+          />
+          {images.map((img, index) => (
+            <Row key={img.number}>
+              <Col>
+                <Form.Control
+                  type="file"
+                  onChange={(e) => changeImage(e.target.files[0], img.number)}
+                  className="mt-2 mb-2"
+                />
+              </Col>
+              <Col xs={1}>
+                <CloseButton
+                  className="mt-2"
+                  onClick={() => removeImage(img.number)}
+                />
+              </Col>
+            </Row>
+          ))}
+          <Button
+            variant="outline-primary"
+            onClick={addImage}
+            className="mt-2 mb-2"
+          >
+            Добавить изображение
+          </Button>
           <hr />
-          <Button variant={"outline-primary"} onClick={addInfo}>
+          <Button
+            variant="outline-primary"
+            onClick={addInfo}
+            className="mt-2 mb-2"
+          >
             Добавить характеристику
           </Button>
           {info.map((i) => (
@@ -156,7 +186,6 @@ const CreateDevice = observer(({ show, onHide }) => {
                     changeInfo("title", e.target.value, i.number)
                   }
                   placeholder="Название характеристики"
-                  autoFocus
                   className="mt-2 mb-2"
                 />
               </Col>
@@ -167,14 +196,13 @@ const CreateDevice = observer(({ show, onHide }) => {
                     changeInfo("description", e.target.value, i.number)
                   }
                   placeholder="Описание характеристики"
-                  autoFocus
                   className="mt-2 mb-2"
                 />
               </Col>
-              <Col>
+              <Col xs={1}>
                 <CloseButton
+                  className="mt-2"
                   onClick={() => removeInfo(i.number)}
-                  className="mt-2 mb-2"
                 />
               </Col>
             </Row>
