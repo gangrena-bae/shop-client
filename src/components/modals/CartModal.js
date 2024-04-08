@@ -4,7 +4,6 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { observer } from "mobx-react-lite";
 import { Context } from "../../index";
 import {
-  CloseButton,
   Col,
   ListGroup,
   ListGroupItem,
@@ -86,7 +85,7 @@ const Cart = observer(() => {
               </ListGroupItem>
             </ListGroup>
           )}
-          <CartForm />
+          <CartForm handleClose={handleClose} />
         </Offcanvas.Body>
       </Offcanvas>
     </>
@@ -94,4 +93,3 @@ const Cart = observer(() => {
 });
 
 export default Cart;
-
