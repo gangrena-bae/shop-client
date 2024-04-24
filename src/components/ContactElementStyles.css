@@ -1,4 +1,4 @@
-.wrapper {
+/* .wrapper {
   --primary-color: #00234d;
   --secondary-color: #f76b6a;
   --btn-primary-border-radius: 0.25rem;
@@ -712,4 +712,68 @@
   margin-bottom: 0;
   margin-top: 0px;
   display: block;
+} */
+.contact-element {
+  display: flex;
+  justify-content: flex-start; /* Изменено для лучшего выравнивания */
+  align-items: center;
+  border: 1px solid #0074ca; /* Серая обводка */
+  padding: 10px;
+  margin-bottom: 15px; /* Отступ снизу для разделения карточек */
+  border-radius: 8px;
+  width: 100%; /* Изменено для полного заполнения контейнера */
+  max-width: 500px; /* Максимальная ширина для больших экранов */
+  height: auto; /* Изменено для автоматической высоты */
+  overflow: hidden;
+  transition: all 0.3s ease; /* Добавляем плавный переход */
+  cursor: pointer; /* Изменяем курсор для указания на интерактивность */
+  background-color: white;
+}
+
+.contact-element:hover {
+  border-color: #0056b3; /* Темно-синий цвет при наведении */
+  background-color: #e7f1ff; /* Светло-синий фон при наведении */
+  transform: scale(1.02); /* Небольшое увеличение размера */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  margin-right: 15px; /* Отступ от иконки до текста */
+  font-size: 24px; /* Размер иконки через размер шрифта, если используются иконки шрифта */
+  width: 50px; /* Фиксированная ширина для SVG иконок */
+  height: 24px; /* Фиксированная высота для SVG иконок */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Изменено для центрирования содержимого */
+  align-items: start;
+  text-align: start;
+}
+
+.content-contact h4,
+.content-contact p {
+  margin: 0;
+  margin-bottom: 5px; /* Отступ между заголовком и описанием */
+  color: #0074ca; /* Цвет текста */
+}
+
+@media (max-width: 768px) {
+  .contact-element {
+    flex-direction: column; /* Элементы в столбец для мобильных */
+    width: 100%; /* Занимает всю ширину родителя */
+    max-width: none; /* Убирает ограничение максимальной ширины */
+    padding-top: 20px; /* Добавляет отступ сверху для всего контейнера */
+  }
+  .icon {
+    margin-bottom: 20px; /* Добавляет отступ снизу для иконки */
+    margin-top: 0; /* Обеспечивает, что отступ сверху для иконки равен 0, если нужно */
+  }
+  .content-contact h4 {
+    font-size: 20px; /* Увеличивает размер шрифта заголовка */
+  }
 }

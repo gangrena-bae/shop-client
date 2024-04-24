@@ -1,53 +1,68 @@
 .sticky-navbar {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap; /* Позволяем элементам переноситься на новую строку */
+  justify-content: space-between;
   align-items: center;
   position: sticky;
-  flex-wrap: wrap;
   top: 0;
-  /* background-color: ; */
-  border-bottom: solid;
-  border-width: 0.01px;
-  border-color: gray;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
   z-index: 999;
+  padding: 10px 20px;
+  width: 100%;
 }
 
-.stickyLeft {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+.stickyLeft,
 .stickyRight {
   display: flex;
-  justify-content: center;
   align-items: center;
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  /* Убираем wrap, чтобы контролировать перенос вручную */
 }
-
 .sticky-navbar li {
-  margin: 15px;
+  margin: 0 10px;
 }
 
-.sticky-navbar a {
+@media (max-width: 768px) {
+  .sticky-navbar {
+    justify-content: center; /* Центрируем содержимое для мобильных */
+  }
+
+  .stickyLeft,
+  .stickyRight {
+    flex-basis: 100%; /* Заставляем каждый блок занимать полную ширину, формируя 2 строки */
+    justify-content: center; /* Центрируем элементы внутри блоков */
+    margin-bottom: 10px; /* Добавляем небольшой отступ снизу для разделения строк */
+  }
+
+  .sticky-navbar li {
+    margin: 0px 5px; /* Уменьшаем отступы между элементами */
+  }
+}
+
+.sticky-navbar a,
+.phone a {
   text-decoration: none;
   color: #333;
+  transition: color 0.3s ease;
 }
 
-.sticky-navbar a:hover {
-  color: #0074CA;
+.sticky-navbar a:hover,
+.phone a:hover {
+  color: #0074ca;
 }
+
+.contact-icon {
+  margin-right: 15px;
+}
+
+.contact-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
 .phone {
   font-size: 16px;
-}
-.phone a {
-  color: #000;
-  font-size: 16px;
-  margin: 0px;
 }

@@ -18,6 +18,12 @@ import {
   SPECIAL_ROUTE,
 } from "../utils/consts";
 import { NavLink } from "react-router-dom";
+import ImageHoverText from "../components/ImageHoverText";
+import HeroSection from "../components/HeroSection";
+import Features from "../components/Features";
+import BrandCarousel from "../components/BrandCarousel";
+import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer";
 
 const MainPage = () => {
   return (
@@ -26,7 +32,12 @@ const MainPage = () => {
         <div className="child">
           <div className="sideChild">
             <NavLink to={SHOP_ROUTE}>
-              <div className="hover-text-one">
+              <ImageHoverText
+                imageSrc={Val}
+                title="Винтовые передачи"
+                text="Только надежное железо"
+              />
+              {/* <div className="hover-text-one">
                 <figure className="effect-text-four">
                   <Image src={Val}></Image>
                   <figcaption>
@@ -34,13 +45,13 @@ const MainPage = () => {
                     <p>Только надежное железо</p>
                   </figcaption>
                 </figure>
-              </div>
+              </div> */}
             </NavLink>
           </div>
 
           <div className="sideChild">
             <NavLink to={SHOP_ROUTE}>
-              <div className="hover-text-one">
+              {/* <div className="hover-text-one">
                 <figure className="effect-text-four">
                   <Image src={Panel}></Image>
                   <figcaption>
@@ -48,7 +59,13 @@ const MainPage = () => {
                     <p>Простое решение непростой задачи</p>
                   </figcaption>
                 </figure>
-              </div>
+              </div> */}
+
+              <ImageHoverText
+                imageSrc={Panel}
+                title="Редукторы"
+                text="Простое решение непростой задачи"
+              />
             </NavLink>
           </div>
         </div>
@@ -62,12 +79,12 @@ const MainPage = () => {
             <Row>
               <Col>
                 <NavLink to={SHOP_ROUTE}>
-                  <Button variant="outline-dark">Магазин</Button>
+                  <Button variant="outline-primary">Магазин</Button>
                 </NavLink>
               </Col>
               <Col>
                 <NavLink to={SPECIAL_ROUTE}>
-                  <Button variant="outline-dark" className="text-nowrap">
+                  <Button variant="outline-primary" className="text-nowrap">
                     Связаться с нами
                   </Button>
                 </NavLink>
@@ -78,7 +95,7 @@ const MainPage = () => {
         <div className="child">
           <div className="sideChild">
             <NavLink to={SHOP_ROUTE}>
-              <div className="hover-text-one">
+              {/* <div className="hover-text-one">
                 <figure className="effect-text-four">
                   <img src={Pch}></img>
                   <figcaption>
@@ -86,13 +103,18 @@ const MainPage = () => {
                     <p>Высокое качество и обширные возможности</p>
                   </figcaption>
                 </figure>
-              </div>
+              </div> */}
+              <ImageHoverText
+                imageSrc={Pch}
+                title="Преобразователи"
+                text="Высокое качество и обширные возможности"
+              />
             </NavLink>
           </div>
 
           <div className="sideChild">
             <NavLink to={SHOP_ROUTE}>
-              <div className="hover-text-one">
+              {/* <div className="hover-text-one">
                 <figure className="effect-text-four">
                   <Image src={Motor}></Image>
                   <figcaption>
@@ -100,95 +122,22 @@ const MainPage = () => {
                     <p>Для тех, кто ценит время и деньги</p>
                   </figcaption>
                 </figure>
-              </div>
+              </div> */}
+              <ImageHoverText
+                imageSrc={Motor}
+                title="Сервоприводы"
+                text="Для тех, кто ценит время и деньги"
+              />
             </NavLink>
           </div>
         </div>
       </div>
+      <HeroSection />
+      <Features />
 
-      <section id="hero">
-        <h2>О нас</h2>
-        <p>
-          Мы - профессиональный поставщик промышленной электроники. Наша
-          компания специализируется на продаже широкого ассортимента
-          оборудования, компонентов и систем промышленной электроники. Мы
-          предлагаем высококачественные продукты, которые предназначены для
-          использования в промышленных отраслях, таких как производство,
-          энергетика, автоматизация, обработка данных и многое другое. Наш
-          ассортимент включает в себя электронные приборы, контроллеры, панели
-          управления, сенсоры, преобразователи сигналов, промышленные компьютеры
-          и другие продукты, необходимые для эффективной работы промышленных
-          процессов.
-        </p>
-        <a href="#" className="btn">
-          Узнать больше
-        </a>
-      </section>
-      <section className="features">
-        <div className="featureCard">
-          <img src={Storage} />
-          <h3 className="featureName">Собственный склад</h3>
-          <p className="featureDesc">
-            Большой ассортимент в наличии и под заказ
-          </p>
-        </div>
-        <div className="featureCard">
-          <img src={Supp} />
-          <h3 className="featureName">Помощь в подборе</h3>
-          <p className="featureDesc">Подберем аналог за вас</p>
-        </div>
-        <div className="featureCard">
-          <img src={Hand} />
-          <h3 className="featureName">Прозрачность сделки</h3>
-          <p className="featureDesc">Предоставляем все документы</p>
-        </div>
-        <div className="featureCard">
-          <img src={Deliver} />
-          <h3 className="featureName">Быстрая доставка</h3>
-          <p className="featureDesc">Налаженные каналы поставки</p>
-        </div>
-      </section>
+      <BrandCarousel />
 
-      <section className="carousel">
-        <div className="slider">
-          <div className="slide-track">
-            <div className="slide">
-              <img
-                src="img/autonics-seeklogo.com.png"
-                height="100"
-                width="250"
-              />
-            </div>
-            <div className="slide">
-              <img src="img/Mitsubishi_Electric.png" height="100" width="250" />
-            </div>
-            <div className="slide">
-              <img src="img/Siemens.png" height="100" width="250" />
-            </div>
-            <div className="slide">
-              <img src="/img/weintek.png" height="100" width="250" />
-            </div>
-            <div className="slide">
-              <img
-                src="img/autonics-seeklogo.com.png"
-                height="100"
-                width="250"
-              />
-            </div>
-            <div className="slide">
-              <img src="img/Mitsubishi_Electric.png" height="100" width="250" />
-            </div>
-            <div className="slide">
-              <img src="img/Siemens.png" height="100" width="250" />
-            </div>
-            <div className="slide">
-              <img src="/img/weintek.png" height="100" width="250" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
+      {/* <section id="contact">
         <div className="contactLeft">
           <div className="contactLeftInfo">
             <h2>Контакты</h2>
@@ -214,11 +163,8 @@ const MainPage = () => {
             frameborder="0"
           ></iframe>
         </div>
-      </section>
-
-      <footer>
-        <p>© 2022 Electhor. Все права защищены.</p>
-      </footer>
+      </section> */}
+      <ContactSection />
     </div>
   );
 };

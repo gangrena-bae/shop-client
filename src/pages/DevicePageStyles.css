@@ -709,6 +709,7 @@
 .carousel-item img {
   width: 500px;
   height: 450px;
+  object-fit: contain;
 }
 .right_side {
   width: 40%;
@@ -726,16 +727,47 @@
   margin-right: 100px;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 768px) {
   .device_info {
     flex-direction: column;
   }
-  .left_side {
-    width: 100%;
-    height: 100%;
-  }
+
+  .left_side,
   .right_side {
     width: 100%;
-    margin-top: 30px;
   }
+
+  .carousel-item img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+.device_name {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #007bff; /* Adjust the color to fit the theme */
+}
+
+.device_price {
+  font-size: 1.5rem;
+  color: #28a745; /* Green color to highlight the price */
+  margin: 10px 0;
+}
+.list-group-item {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn-outline-primary {
+  color: #007bff;
+  border-color: #007bff;
+  background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
 }

@@ -1,22 +1,16 @@
 import React, { useContext } from "react";
 import { Context } from "../index";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
-import {
-  ADMIN_ROUTE,
-  LOGIN_ROUTE,
-  MAIN_ROUTE,
-  SHOP_ROUTE,
-  SPECIAL_ROUTE,
-  CATEGORIES_ROUTE,
-} from "../utils/consts";
+import { MAIN_ROUTE, SPECIAL_ROUTE, CATEGORIES_ROUTE } from "../utils/consts";
 import Button from "react-bootstrap/Button";
 import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
 import CartModal from "./modals/CartModal";
 import "../components/NavBarStyles.css";
+import { ReactComponent as Mail } from "../components/icons/mail.svg";
+import { ReactComponent as Telegram } from "../components/icons/telegram.svg";
+import { ReactComponent as Whatsapp } from "../components/icons/whatsapp.svg";
+import { ReactComponent as Viber } from "../components/icons/viber.svg";
 
 const NavBar = observer(() => {
   const { user } = useContext(Context);
@@ -70,9 +64,6 @@ const NavBar = observer(() => {
           <li>
             <NavLink to={MAIN_ROUTE}>Главная</NavLink>
           </li>
-          {/* <li>
-            <NavLink to={SHOP_ROUTE}>Каталог</NavLink>
-          </li> */}
           <li>
             <NavLink to={CATEGORIES_ROUTE}>Каталог</NavLink>
           </li>
@@ -84,10 +75,20 @@ const NavBar = observer(() => {
           <li>
             <CartModal />
           </li>
-          <li>
-            <div className="phone">
-              <a href="tel:+79673506321">+7 (967) 350-63-21</a>
-            </div>
+          <li className="contact-icon">
+            <Mail />
+          </li>
+          <li className="contact-icon">
+            <Telegram />
+          </li>
+          <li className="contact-icon">
+            <Whatsapp />
+          </li>
+          <li className="contact-icon">
+            <Viber />
+          </li>
+          <li className="phone">
+            <a href="tel:+79673506321">+7 (967) 350-63-21</a>
           </li>
         </ul>
       </nav>

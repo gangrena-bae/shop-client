@@ -1,8 +1,40 @@
-.main-form {
-  margin-top: 50px;
+.con-group {
   display: flex;
-  width: 100%;
-  height: 50rem;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-form {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  margin-bottom: 20px;
+  text-align: start;
+  color: #0074ca; /* Цвет заголовка */
+}
+
+@media (max-width: 768px) {
+  .con-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Располагаем элементы по 2 в ряд */
+    gap: 10px;
+  }
+
+  .contact-element {
+    justify-content: flex-start; /* Выравнивание элементов к началу */
+  }
+
+  .icon,
+  .content-contact {
+    text-align: left; /* Текст выравнивается по левому краю */
+  }
+
+  /* Если элементы все еще отображаются по одному в ряд, можно попробовать увеличить ширину */
+  .contact-element {
+    width: 100%; /* Занимает всю доступную ширину */
+  }
 }

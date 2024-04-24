@@ -1,0 +1,53 @@
+#hero {
+  display: flex;
+  background: linear-gradient(70deg, #5f5c5f, #0074ca);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  padding: 100px;
+  text-align: center; /* Центрирование текста */
+  height: max-content;
+  text-align: start;
+}
+
+#hero h2 {
+  font-size: 48px; /* Увеличенный размер для заголовка */
+  margin-bottom: 20px; /* Увеличенный отступ снизу */
+}
+
+#hero p {
+  font-size: 20px; /* Увеличенный размер для текста */
+  margin-bottom: 30px; /* Увеличенный отступ снизу */
+}
+
+#hero .btn {
+  display: inline-block;
+
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none; /* Убрать подчеркивание текста */
+  transition: background-color 0.3s; /* Плавный переход для фона кнопки */
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards; /* Добавляем анимацию появления */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(
+      20px
+    ); /* Начальное состояние: прозрачность 0 и небольшой сдвиг вниз */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(
+      0
+    ); /* Конечное состояние: полная видимость и без сдвига */
+  }
+}

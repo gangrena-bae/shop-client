@@ -1,0 +1,103 @@
+.image-hover-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-hover-container img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.title-bar {
+  font-size: 30px;
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  text-align: start;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  transition: all 0.5s ease;
+}
+
+.title-bar span {
+  position: relative;
+  display: inline-block;
+}
+
+.title-bar span::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.5s ease;
+}
+
+.image-hover-container:hover .title-bar span::after {
+  width: 100%;
+}
+
+.hover-text {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  text-align: start;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 10px 20px;
+  transition: bottom 0.5s ease;
+}
+
+.image-hover-container:hover .hover-text {
+  bottom: 20%;
+}
+
+.image-hover-container:hover .title-bar {
+  bottom: 65%;
+}
+
+.image-hover-container:hover img {
+  transform: scale(1.1);
+}
+
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 768px) {
+  .image-hover-container img {
+    transform: none;
+    transition: none;
+  }
+  .title-bar,
+  .hover-text {
+    /* Убираем изменения, связанные с наведением */
+    transition: none; /* Выключаем анимацию */
+  }
+  .title-bar {
+    top: 10px; /* Размещаем заголовок сверху с небольшим отступом */
+    left: 0; /* Обеспечиваем полное заполнение ширины */
+    right: 0;
+    bottom: initial; /* Сбрасываем нижнее позиционирование */
+    text-align: center; /* Выравниваем текст по центру */
+    font-size: 20px; /* Уменьшаем размер шрифта */
+    padding: 10px 20px; /* Восстанавливаем отступы */
+  }
+  .hover-text {
+    position: absolute;
+    bottom: 10px; /* Размещаем описание снизу с небольшим отступом */
+    left: 0; /* Обеспечиваем полное заполнение ширины */
+    right: 0;
+    text-align: center; /* Выравниваем текст по центру */
+    padding: 10px 20px; /* Восстанавливаем отступы */
+  }
+  /* Отключаем эффекты при наведении */
+  .image-hover-container:hover .title-bar,
+  .image-hover-container:hover .hover-text,
+  .image-hover-container:hover img {
+    transform: none;
+    transition: none;
+  }
+  .title-bar span::after {
+    width: auto; /* Сбрасываем анимацию линии под заголовком */
+  }
+}

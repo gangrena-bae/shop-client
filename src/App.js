@@ -7,6 +7,8 @@ import { observer } from "mobx-react-lite";
 import { check } from "./http/userApi";
 import { Spinner } from "react-bootstrap";
 import SideBar from "./components/SideBar";
+// Предполагается, что у вас есть Footer компонент
+import Footer from "./components/Footer";
 
 const App = observer(() => {
   const { user } = useContext(Context);
@@ -27,9 +29,12 @@ const App = observer(() => {
 
   return (
     <BrowserRouter>
-      <NavBar />
       <SideBar />
-      <AppRouter />
+      <div className="main-content-wrapper">
+        <NavBar />
+        <AppRouter />
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 });

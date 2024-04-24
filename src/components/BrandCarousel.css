@@ -1,0 +1,30 @@
+.brand-carousel {
+  height: 400px;
+}
+.brand-carousel img {
+  max-height: 400px;
+  object-fit: contain;
+  margin: auto;
+}
+
+.brand-carousel .carousel-indicators [data-bs-target] {
+  background-color: #007bff;
+}
+
+.brand-carousel .carousel-control-prev,
+.brand-carousel .carousel-control-next {
+  filter: invert(100%);
+}
+
+.brand-carousel .carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .brand-carousel .carousel-caption h3,
+  .brand-carousel .carousel-caption p {
+    font-size: 14px;
+  }
+}

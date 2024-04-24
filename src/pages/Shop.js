@@ -10,6 +10,7 @@ import { Context } from "../index";
 import { fetchTypes, fetchBrands, fetchDevices } from "../http/deviceAPI";
 import Pages from "../components/Pages";
 import SearchBar from "../components/SearchBar";
+import "./Shop.css"; // В начале файла Shop.js
 
 const Shop = observer(() => {
   const { device } = useContext(Context);

@@ -3,13 +3,9 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { observer } from "mobx-react-lite";
 import { Context } from "../../index";
-import {
-  Col,
-  ListGroup,
-  ListGroupItem,
-  Row,
-} from "react-bootstrap";
+import { Col, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 import CartForm from "../CartForm";
+import { ReactComponent as CartLogo } from "../icons/Cart.svg";
 
 const Cart = observer(() => {
   const { cart } = useContext(Context);
@@ -24,7 +20,7 @@ const Cart = observer(() => {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Корзина:{" "}
+        <CartLogo />{" "}
         {new Intl.NumberFormat("ru-RU", {
           style: "currency",
           currency: "RUB",

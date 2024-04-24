@@ -11,6 +11,7 @@ import Brake from "../components/icons/brake-pads-svgrepo-com.svg";
 import Engine from "../components/icons/engine-motor-svgrepo-com.svg";
 import Resistor from "../components/icons/resistor-svgrepo-com.svg";
 import { SHOP_ROUTE } from "../utils/consts";
+import Footer from "../components/Footer";
 
 const Categories = () => {
   const { device } = useContext(Context);
@@ -74,33 +75,36 @@ const Categories = () => {
   };
 
   return (
-    <div className="container-cat">
-      {categories.map((category) => (
-        <div
-          className="card-cat"
-          key={category.name}
-          onClick={() => handleSelectCategory(category.name)}
-        >
-          <div className="face face1">
-            <div className="content-cat">
-              <img src={category.icon} alt={category.name} />
-              <h3>{category.name}</h3>
+    <>
+      <div className="container-cat">
+        {categories.map((category) => (
+          <div
+            className="card-cat"
+            key={category.name}
+            onClick={() => handleSelectCategory(category.name)}
+          >
+            <div className="face face1">
+              <div className="content-cat">
+                <img src={category.icon} alt={category.name} />
+                <h3>{category.name}</h3>
+              </div>
+            </div>
+            <div className="face face2">
+              <div className="content-cat">
+                <p>{category.description}</p>
+                <a
+                  className="link"
+                  onClick={() => handleSelectCategory(category.name)}
+                >
+                  Подробнее
+                </a>
+              </div>
             </div>
           </div>
-          <div className="face face2">
-            <div className="content-cat">
-              <p>{category.description}</p>
-              <a
-                className="link"
-                onClick={() => handleSelectCategory(category.name)}
-              >
-                Подробнее
-              </a>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+
+    </>
   );
 };
 
